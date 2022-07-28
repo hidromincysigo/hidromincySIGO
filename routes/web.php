@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RolesControllers;
+use App\Http\Controllers\UsuariosControllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +16,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-Route::group(['middleware' => 'auth'], function () {
-
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
-});
-Auth::routes();
+
+// bloqueamos el registro por ruto register
+Auth::routes(["register" => false]);
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//y creamos un grupo de rutas protegidas para los controladores
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles', RolesControllers::class);
+    Route::resource('/usuarios', UsuariosControllers::class);
+  
+});

@@ -253,15 +253,17 @@ return [
             'icon'        => 'far fa-fw fa-file',
         
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Seguridad'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Control de Usuarios',
+            'url'  => 'usuarios',
+            'can'  => 'crear-users',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Roles & Permisos',
+            'url'  => 'roles',
+            'can'  => 'crear-roles',
             'icon' => 'fas fa-fw fa-lock',
         ],
         ['header' => 'SISTEMA PRINCIPAL'],
