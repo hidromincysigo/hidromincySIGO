@@ -274,15 +274,15 @@ return [
                
                 [
                     'text'    => 'Procesos Hidricos',
-                    'url'     => '#',
+                
                     'submenu' => [
                         [
                             'text' => 'Captación',
-                            'url'  => '#',
+                        
                             'submenu' => [
                                 [
                                     'text' => 'Embalses',
-                                    'url'  => '#',
+                                    'url'  => '/Procesos_Hidricos/Captacion/Embalses',
                                 ],
                                 [
                                     'text' => 'Dique Toma',
