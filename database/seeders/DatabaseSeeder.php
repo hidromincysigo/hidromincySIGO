@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,            
             RoleHasPermissionSeeder::class,
             UsersTableSeeder::class,
+            VenezuelaTableSeeder::class,
         ]);
     }
 }
