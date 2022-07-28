@@ -34,9 +34,9 @@ return new class extends Migration
             $table->string('constructora');
             $table->string('cronologia');
 
-            $table->foreign('estado_id')->references('id')->on('estado');
-            $table->foreign('municipio_id')->references('id')->on('municipio');
-            $table->foreign('parroquia_id')->references('id')->on('parroquia');
+            $table->foreign('estado_id')->references('id')->on('estados');
+            $table->foreign('municipio_id')->references('id')->on('municipios');
+            $table->foreign('parroquia_id')->references('id')->on('parroquias');
             $table->foreign('ciudades_id')->references('id')->on('ciudades');
 
 
