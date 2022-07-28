@@ -31,6 +31,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //y creamos un grupo de rutas protegidas para los controladores
 Route::group(['middleware' => ['auth']], function() {
+    Route::post('usuarios/{id}/restore',[UsuariosControllers::class, 'restore'])->name('usuarios.restore');
     Route::resource('roles', RolesControllers::class);
     Route::resource('/usuarios', UsuariosControllers::class);
   

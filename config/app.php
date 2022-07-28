@@ -199,6 +199,9 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
  // se agrega el debugger
         Barryvdh\Debugbar\ServiceProvider::class,
+ // se agrega la auditoria
+        OwenIt\Auditing\AuditingServiceProvider::class,
+
     ],
 
     /*
