@@ -8,11 +8,6 @@ use Spatie\Permission\Models\Role;
 
 class RoleHasPermissionSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         app()->make(\Spatie\Permission\PermissionRegistrar::class)->forgetCachedPermissions();
