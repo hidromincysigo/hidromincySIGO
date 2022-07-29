@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '',
+    'logo' => 'v-1.0',
     'logo_img' => 'logo/logosigoS.png',
     /// se debe solucionar el error de la imagen
-    'logo_img_class' => 'img-circle elevation-3',
+    'logo_img_class' => 'brand-image',
     'logo_img_xl' => null,
-    'logo_img_xl_class' => 'brand-image-xs',
+    'logo_img_xl_class' => 'brand-image-sm',
     'logo_img_alt' => 'HIDROCAPITAL - SIGO',
 
     /*
