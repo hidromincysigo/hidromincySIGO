@@ -1,4 +1,6 @@
 
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+
 ## SISTEMA INTEGRAL DE GESTION DE OPERACIONES
 
 Sigo es un aplicativo que pretende ser un sistema integral de gestion operativa para el manego de Datos estadisticos de las diferentes operaciones en las HIDROLOGICAS
@@ -11,9 +13,39 @@ Sigo es un aplicativo que pretende ser un sistema integral de gestion operativa 
 - **NODEJS => v14^**
 - ** POSTGRESQL => V11^**
 
-
-
 ## APLICATIVO DESARROLLADO POR HIDROCAPITAL 
-- ** Actualizado y mejorado por HIDROVEN
+- ** Actualizado y mejorado por HIDROVEN **
+
+- Control de Procesos Hidricos
+- 
+- 
+- 
+- 
+- 
+- 
+
+Este sistema esta basado en el framework de Larvel
+
+
+## Laravel Sponsors
+
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+
+### Desarrolladores
+
+- **[Ely Chirivella](https://github.com/elychirivella10)**
+- **[Glinyer Franco](https://github.com/gfrancojf)**
+
+## Contributing
+- ** **
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+
 
 
