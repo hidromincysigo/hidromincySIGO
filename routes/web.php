@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RolesControllers;
 use App\Http\Controllers\UsuariosControllers;
 use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\AuditsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('usuarios/{id}/restore',[UsuariosControllers::class, 'restore'])->name('usuarios.restore');
     Route::resource('roles', RolesControllers::class);
     Route::resource('/usuarios', UsuariosControllers::class);
+
+    Route::get('/auditar',[AuditsController::class,'index'])->name('auditar.index');
   
 });
 

@@ -266,6 +266,12 @@ return [
             'can'  => 'crear-roles',
             'icon' => 'fas fa-fw fa-lock',
         ],
+
+        [
+            'text' => 'Auditoria de Eventos',
+            'url'  => 'auditar',            
+            'icon' => '',
+        ],
         ['header' => 'SISTEMA PRINCIPAL'],
         [
             'text'    => 'REGISTRO',
