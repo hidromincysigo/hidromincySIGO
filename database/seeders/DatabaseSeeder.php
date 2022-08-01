@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             RoleHasPermissionSeeder::class,
             UsersTableSeeder::class,
             VenezuelaTableSeeder::class,
+            AcueductosTableSeeder::class,
+            DiqueTomaSeeder::class,
         ]);
     }
 }
