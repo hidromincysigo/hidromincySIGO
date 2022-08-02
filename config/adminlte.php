@@ -154,7 +154,7 @@ return [
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => false,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_animation_speed' => 1000,
 
     /*
     |--------------------------------------------------------------------------
@@ -242,11 +242,7 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+   
         [
             'text'        => 'PANEL ADMINISTRATIVO',
             'url'         => 'home',
@@ -257,7 +253,7 @@ return [
         [
             'text' => 'Control de Usuarios',
             'url'  => 'usuarios',
-            'can'  => 'crear-users',
+            'can'  => 'ver-users',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

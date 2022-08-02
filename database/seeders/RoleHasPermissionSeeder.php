@@ -22,6 +22,6 @@ class RoleHasPermissionSeeder extends Seeder
                 substr($permission->name, 0, 5) != 'role_' &&
                 substr($permission->name, 0, 5) != 'permission_';
         });
-        Role::findOrFail(3)->permissions()->sync($user_permissions);
+        Role::findOrFail(2)->permissions()->sync($user_permissions);
     }
 }

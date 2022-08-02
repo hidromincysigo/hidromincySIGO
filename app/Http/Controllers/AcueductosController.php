@@ -9,13 +9,33 @@ use Illuminate\Http\Request;
  * Class AcueductoController
  * @package App\Http\Controllers
  */
+
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Arr;
+use Spatie\Permission\Models\Permission;
+
 class AcueductosController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
+     * 
+     * 
+     *
      */
+
+    function __construct()
+    {
+         $this->middleware('permission:ver-Acueductos|crear-Acueductos|editar-Acueductos|borrar-Acueductos', ['only' => ['index']]);
+         $this->middleware('permission:crear-Acueductos', ['only' => ['create','store']]);
+         $this->middleware('permission:editar-Acueductos', ['only' => ['edit','update']]);
+         $this->middleware('permission:borrar-Acueductos', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $acueductos = Acueductos::paginate();
