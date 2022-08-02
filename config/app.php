@@ -199,6 +199,13 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
  // se agrega el debugger
         Barryvdh\Debugbar\ServiceProvider::class,
+ // se agrega la auditoria
+        OwenIt\Auditing\AuditingServiceProvider::class,
+         // se agrega la domPDF
+        Barryvdh\DomPDF\ServiceProvider::class,
+
+
+
     ],
 
     /*
@@ -215,5 +222,5 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
-
+    'PDF' => Barryvdh\DomPDF\Facade::class,
 ];
