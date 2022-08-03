@@ -1,20 +1,35 @@
-@extends('layouts.app')
 
-@section('template_title')
-    {{ $acueducto->name ?? 'Show Acueducto' }}
-@endsection
+   @extends ('adminlte::page')
+
+@section('title', 'Acueductos')
+
 
 @section('content')
-    <section class="content container-fluid">
+
+
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+  
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/home">INICIO</a></li>
+            <li class="breadcrumb-item active">           {{ $acueducto->nombre }}</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+
+ <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Acueducto</span>
+                            <span class="card-title">Detalles del  Acueducto: <strong> {{ $acueducto->nombre }}</strong></span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('acueductos.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('acueducto.index') }}">Regresar</a>
                         </div>
                     </div>
 
@@ -42,4 +57,15 @@
             </div>
         </div>
     </section>
-@endsection
+
+
+          
+@stop
+
+@section('css')
+<link ref="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+
+@stop

@@ -7,9 +7,12 @@
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('estado') }}
+
+
+             se debe colocar la foreach de estados
+            {{-- {{ Form::label('estado') }}
             {{ Form::text('estado', $acueducto->estado, ['class' => 'form-control' . ($errors->has('estado') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
-            {!! $errors->first('estado', '<div class="invalid-feedback">:message</div>') !!}
+            {!! $errors->first('estado', '<div class="invalid-feedback">:message</div>') !!} --}}
         </div>
         <div class="form-group">
             {{ Form::label('capacidad_distribucion') }}

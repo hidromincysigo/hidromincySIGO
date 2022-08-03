@@ -30,6 +30,7 @@
                             <table class="table table-striped mt-2">
                               <thead>                                     
                                   <th>ID</th>
+                                     <th>Usuario</th>
                                   <th>Modulo</th>                         
                                  <th>Evento</th>
                               
@@ -44,8 +45,9 @@
                                 @foreach ($audits as $audit)
                                   <tr>
                                     <td>{{ $audit->id }}</td>
-                                  
+                                  <td>{{ $audit->user->name }}</td>                                  
                                     <td>{{ $audit->user_type }}</td>
+                    
                                     <td>{{ $audit->event }}</td>
                                 
                                       <td>{{ $audit->url }}</td>

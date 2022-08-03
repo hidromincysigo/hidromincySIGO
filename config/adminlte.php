@@ -246,7 +246,7 @@ return [
         [
             'text'        => 'PANEL ADMINISTRATIVO',
             'url'         => 'home',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => ' fa-fw fas fa-table',
         
         ],
         ['header' => 'Seguridad'],
@@ -266,8 +266,7 @@ return [
         [
             'text' => 'Auditoria de Eventos',
             'url'  => 'auditar',            
-            'icon' => '',
-        ],
+            'icon' => 'fa-fw fas fa-file',                    ],
         ['header' => 'SISTEMA PRINCIPAL'],
         [
             'text'    => 'REGISTRO',

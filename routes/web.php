@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RolesControllers;
 use App\Http\Controllers\UsuariosControllers;
-use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\AuditsController;
-use App\Http\Controllers\AcueductosController;
+use App\Http\Controllers\AcueductoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,8 +24,6 @@ Route::get('/', function () {
 
 // bloqueamos el registro por ruto register
 Auth::routes(["register" => false]);
-
-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -49,7 +46,9 @@ Route::group(['middleware' => ['auth']], function() {
 // REGISTRO //
 
 
-Route::resource('/acueducto', AcueductosController::class);
+
+
+Route::resource('acueducto', AcueductoController::class);
 
 
 // Route::get('/Procesos_Hidricos/Captacion/Embalses',

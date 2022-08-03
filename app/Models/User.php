@@ -17,6 +17,7 @@ class User extends Authenticatable implements Auditable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
     use \OwenIt\Auditing\Auditable;
+    
     protected $fillable = [
         'name',
         'email',
@@ -33,4 +34,10 @@ class User extends Authenticatable implements Auditable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function getFullNameAttribute()
+    {
+        return $this->name . ' ' . $this->last_name;
+    }
 }

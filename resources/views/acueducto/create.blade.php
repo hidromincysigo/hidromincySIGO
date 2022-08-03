@@ -1,22 +1,35 @@
-@extends('layouts.app')
+@extends ('adminlte::page')
 
-@section('template_title')
-    Create Acueducto
-@endsection
+@section('title', 'Acueductos')
+
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
+
+
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+  
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/home">INICIO</a></li>
+            <li class="breadcrumb-item active">Creacion de Acueducto</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+
+
+
 
                 @includeif('partials.errors')
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Acueducto</span>
+                        <span class="card-title">Creacion de Acueducto</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('acueductos.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('acueducto.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('acueducto.form')
@@ -24,7 +37,15 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-@endsection
+          
+          
+@stop
+
+@section('css')
+<link ref="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+
+@stop
+

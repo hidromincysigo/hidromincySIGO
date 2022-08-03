@@ -14,8 +14,9 @@ class AuditsController extends Controller
      */
     public function index()
     {
+        $user = auth()->user();
         $audits = audits::paginate(1);
-        return view('auditoria.index',compact('audits'));
+        return view('auditoria.index',compact('audits', 'user'));
     }
 
 }
