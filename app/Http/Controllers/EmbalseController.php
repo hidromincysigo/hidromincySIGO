@@ -24,7 +24,6 @@ class EmbalseController extends Controller
          $this->middleware('permission:editar-users', ['only' => ['edit','update']]);
          $this->middleware('permission:borrar-users', ['only' => ['destroy']]);
     }
-    
     public function index()
     {
         $embalses = Embalse::paginate();

@@ -36,12 +36,14 @@
                                     <tr>
                                         <th>No</th>
                                         
+										<th>Reg</th>
 										<th>Nombre</th>
 										<th>Estado</th>
 										<th>Municipio</th>
 										<th>Parroquia</th>
-										<th>Sector</th>
-										<th>Coordenadas</th>
+										<th>Desc Ubicacion</th>
+										<th>Utm A</th>
+										<th>Utm B</th>
 										<th>Proposito</th>
 										<th>Propietario</th>
 										<th>Constructora</th>
@@ -55,12 +57,14 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+											<td>{{ $embalse->reg }}</td>
 											<td>{{ $embalse->nombre }}</td>
 											<td>{{ $embalse->estado }}</td>
 											<td>{{ $embalse->municipio }}</td>
 											<td>{{ $embalse->parroquia }}</td>
-											<td>{{ $embalse->sector }}</td>
-											<td>{{ $embalse->coordenadas }}</td>
+											<td>{{ $embalse->desc_ubicacion }}</td>
+											<td>{{ $embalse->utm_a }}</td>
+											<td>{{ $embalse->utm_b }}</td>
 											<td>{{ $embalse->proposito }}</td>
 											<td>{{ $embalse->propietario }}</td>
 											<td>{{ $embalse->constructora }}</td>

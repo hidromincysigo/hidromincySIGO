@@ -16,6 +16,15 @@ class DiqueTomaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    function __construct()
+    {
+         $this->middleware('permission:ver-users|crear-users|editar-users|borrar-users', ['only' => ['index']]);
+         $this->middleware('permission:crear-users', ['only' => ['create','store']]);
+         $this->middleware('permission:editar-users', ['only' => ['edit','update']]);
+         $this->middleware('permission:borrar-users', ['only' => ['destroy']]);
+    }
+    
     public function index()
     {
         $diqueTomas = DiqueToma::paginate();

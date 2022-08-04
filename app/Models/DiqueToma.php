@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Models;
-
+use OwenIt\Auditing\Contracts\Auditable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class DiqueToma
@@ -27,8 +28,11 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class DiqueToma extends Model
+class DiqueToma extends Model implements Auditable
 {
+
+    use  SoftDeletes;
+    use \OwenIt\Auditing\Auditable;
     
     static $rules = [
 		'estado' => 'required',

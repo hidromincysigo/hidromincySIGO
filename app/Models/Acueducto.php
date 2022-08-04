@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use OwenIt\Auditing\Contracts\Auditable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Acueducto extends Model
+class Acueducto extends Model implements Auditable
 {
     
-    use HasFactory;
+  use SoftDeletes;
+  use \OwenIt\Auditing\Auditable;
 
     static $rules = [
 		'nombre' => 'required',

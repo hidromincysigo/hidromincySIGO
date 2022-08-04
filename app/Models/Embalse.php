@@ -9,12 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class Embalse
  *
  * @property $id
+ * @property $reg
  * @property $nombre
  * @property $estado
  * @property $municipio
  * @property $parroquia
- * @property $sector
- * @property $coordenadas
+ * @property $desc_ubicacion
+ * @property $utm_a
+ * @property $utm_b
  * @property $proposito
  * @property $propietario
  * @property $constructora
@@ -26,22 +28,23 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Estado $estado
  * @property Municipio $municipio
  * @property Parroquia $parroquia
- * @property UbicacionGeografica $ubicacionGeografica
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Embalse extends Model implements Auditable
 {
-    use SoftDeletes;
+    use  SoftDeletes;
     use \OwenIt\Auditing\Auditable;
 
     static $rules = [
+		'reg' => 'required',
 		'nombre' => 'required',
 		'estado' => 'required',
 		'municipio' => 'required',
 		'parroquia' => 'required',
-		'sector' => 'required',
-		'coordenadas' => 'required',
+		'desc_ubicacion' => 'required',
+		'utm_a' => 'required',
+		'utm_b' => 'required',
 		'proposito' => 'required',
 		'propietario' => 'required',
 		'constructora' => 'required',
@@ -55,7 +58,7 @@ class Embalse extends Model implements Auditable
      *
      * @var array
      */
-    protected $fillable = ['nombre','estado','municipio','parroquia','sector','coordenadas','proposito','propietario','constructora','cronologia'];
+    protected $fillable = ['reg','nombre','estado','municipio','parroquia','desc_ubicacion','utm_a','utm_b','proposito','propietario','constructora','cronologia'];
 
 
     /**
@@ -80,14 +83,6 @@ class Embalse extends Model implements Auditable
     public function parroquia()
     {
         return $this->hasOne('App\Models\Parroquia', 'id', 'parroquia');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function ubicacionGeografica()
-    {
-        return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'coordenadas');
     }
     
 

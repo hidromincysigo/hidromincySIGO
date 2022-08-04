@@ -6,6 +6,7 @@ use App\Http\Controllers\RolesControllers;
 use App\Http\Controllers\UsuariosControllers;
 use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\AcueductoController;
+use App\Http\Controllers\EmbalseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +50,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 
 Route::resource('acueducto', AcueductoController::class);
+Route::resource('embalses', EmbalseController::class);
 
 
 // Route::get('/Procesos_Hidricos/Captacion/Embalses',

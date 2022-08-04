@@ -21,6 +21,10 @@
                     <div class="card-body">
                         
                         <div class="form-group">
+                            <strong>Reg:</strong>
+                            {{ $embalse->reg }}
+                        </div>
+                        <div class="form-group">
                             <strong>Nombre:</strong>
                             {{ $embalse->nombre }}
                         </div>
@@ -37,12 +41,16 @@
                             {{ $embalse->parroquia }}
                         </div>
                         <div class="form-group">
-                            <strong>Sector:</strong>
-                            {{ $embalse->sector }}
+                            <strong>Desc Ubicacion:</strong>
+                            {{ $embalse->desc_ubicacion }}
                         </div>
                         <div class="form-group">
-                            <strong>Coordenadas:</strong>
-                            {{ $embalse->coordenadas }}
+                            <strong>Utm A:</strong>
+                            {{ $embalse->utm_a }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Utm B:</strong>
+                            {{ $embalse->utm_b }}
                         </div>
                         <div class="form-group">
                             <strong>Proposito:</strong>

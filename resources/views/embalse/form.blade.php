@@ -2,6 +2,11 @@
     <div class="box-body">
         
         <div class="form-group">
+            {{ Form::label('reg') }}
+            {{ Form::text('reg', $embalse->reg, ['class' => 'form-control' . ($errors->has('reg') ? ' is-invalid' : ''), 'placeholder' => 'Reg']) }}
+            {!! $errors->first('reg', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
             {{ Form::label('nombre') }}
             {{ Form::text('nombre', $embalse->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
@@ -22,14 +27,19 @@
             {!! $errors->first('parroquia', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('sector') }}
-            {{ Form::text('sector', $embalse->sector, ['class' => 'form-control' . ($errors->has('sector') ? ' is-invalid' : ''), 'placeholder' => 'Sector']) }}
-            {!! $errors->first('sector', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('desc_ubicacion') }}
+            {{ Form::text('desc_ubicacion', $embalse->desc_ubicacion, ['class' => 'form-control' . ($errors->has('desc_ubicacion') ? ' is-invalid' : ''), 'placeholder' => 'Desc Ubicacion']) }}
+            {!! $errors->first('desc_ubicacion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('coordenadas') }}
-            {{ Form::text('coordenadas', $embalse->coordenadas, ['class' => 'form-control' . ($errors->has('coordenadas') ? ' is-invalid' : ''), 'placeholder' => 'Coordenadas']) }}
-            {!! $errors->first('coordenadas', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('utm_a') }}
+            {{ Form::text('utm_a', $embalse->utm_a, ['class' => 'form-control' . ($errors->has('utm_a') ? ' is-invalid' : ''), 'placeholder' => 'Utm A']) }}
+            {!! $errors->first('utm_a', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('utm_b') }}
+            {{ Form::text('utm_b', $embalse->utm_b, ['class' => 'form-control' . ($errors->has('utm_b') ? ' is-invalid' : ''), 'placeholder' => 'Utm B']) }}
+            {!! $errors->first('utm_b', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('proposito') }}
