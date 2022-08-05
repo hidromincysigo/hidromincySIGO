@@ -5,6 +5,21 @@
 @endsection
 
 @section('content')
+
+    <div class="container-fluid">
+        <div class="row mb-2">
+        <div class="col-sm-6">
+
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/home">INICIO</a></li>
+            <li class="breadcrumb-item active">listados  de Embalses</li>
+            </ol>
+        </div><!-- /.col -->
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -35,19 +50,11 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Reg</th>
+
 										<th>Nombre</th>
 										<th>Estado</th>
-										<th>Municipio</th>
-										<th>Parroquia</th>
-										<th>Desc Ubicacion</th>
-										<th>Utm A</th>
-										<th>Utm B</th>
 										<th>Proposito</th>
-										<th>Propietario</th>
-										<th>Constructora</th>
-										<th>Cronologia</th>
+										<th>Acciones</th>
 
                                         <th></th>
                                     </tr>
@@ -57,26 +64,16 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $embalse->reg }}</td>
 											<td>{{ $embalse->nombre }}</td>
 											<td>{{ $embalse->estado }}</td>
-											<td>{{ $embalse->municipio }}</td>
-											<td>{{ $embalse->parroquia }}</td>
-											<td>{{ $embalse->desc_ubicacion }}</td>
-											<td>{{ $embalse->utm_a }}</td>
-											<td>{{ $embalse->utm_b }}</td>
 											<td>{{ $embalse->proposito }}</td>
 											<td>{{ $embalse->propietario }}</td>
-											<td>{{ $embalse->constructora }}</td>
-											<td>{{ $embalse->cronologia }}</td>
 
                                             <td>
                                                 <form action="{{ route('embalses.destroy',$embalse->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('embalses.show',$embalse->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('embalses.edit',$embalse->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('embalses.show',$embalse->id) }}">ver</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('embalses.edit',$embalse->id) }}">editar</a>
                                                     @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
