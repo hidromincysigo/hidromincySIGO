@@ -19,12 +19,12 @@ class TomaRioController extends Controller
 
     function __construct()
     {
-         $this->middleware('permission:ver-users|crear-users|editar-users|borrar-users', ['only' => ['index']]);
-         $this->middleware('permission:crear-users', ['only' => ['create','store']]);
-         $this->middleware('permission:editar-users', ['only' => ['edit','update']]);
-         $this->middleware('permission:borrar-users', ['only' => ['destroy']]);
+         $this->middleware('permission:ver-tomaRios|crear-tomaRios|editar-tomaRios|borrar-tomaRios', ['only' => ['index']]);
+         $this->middleware('permission:crear-tomaRios', ['only' => ['create','store']]);
+         $this->middleware('permission:editar-tomaRios', ['only' => ['edit','update']]);
+         $this->middleware('permission:borrar-tomaRios', ['only' => ['destroy']]);
     }
-    
+
     public function index()
     {
         $tomaRios = TomaRio::paginate();

@@ -11,10 +11,10 @@ class AcueductoController extends Controller
 
     function __construct()
     {
-       $this->middleware('permission:ver-Acueductos|crear-Acueductos|editar-Acueductos|borrar-Acueductos', ['only' => ['index']]);
-         $this->middleware('permission:crear-Acueductos', ['only' => ['create','store']]);
-         $this->middleware('permission:editar-Acueductos', ['only' => ['edit','update']]);
-         $this->middleware('permission:borrar-Acueductos', ['only' => ['destroy']]);
+        $this->middleware('permission:ver-Acueductos|crear-Acueductos|editar-Acueductos|borrar-Acueductos', ['only' => ['index']]);
+        $this->middleware('permission:crear-Acueductos', ['only' => ['create','store']]);
+        $this->middleware('permission:editar-Acueductos', ['only' => ['edit','update']]);
+        $this->middleware('permission:borrar-Acueductos', ['only' => ['destroy']]);
     }
 
     public function index()

@@ -19,12 +19,12 @@ class PozoProfundoController extends Controller
 
     function __construct()
     {
-         $this->middleware('permission:ver-users|crear-users|editar-users|borrar-users', ['only' => ['index']]);
-         $this->middleware('permission:crear-users', ['only' => ['create','store']]);
-         $this->middleware('permission:editar-users', ['only' => ['edit','update']]);
-         $this->middleware('permission:borrar-users', ['only' => ['destroy']]);
+         $this->middleware('permission:ver-pozoprofundo|crear-pozoprofundo|editar-pozoprofundo|borrar-pozoprofundo', ['only' => ['index']]);
+         $this->middleware('permission:crear-pozoprofundo', ['only' => ['create','store']]);
+         $this->middleware('permission:editar-pozoprofundo', ['only' => ['edit','update']]);
+         $this->middleware('permission:borrar-pozoprofundo', ['only' => ['destroy']]);
     }
-    
+
     public function index()
     {
         $pozoProfundos = PozoProfundo::paginate();

@@ -19,10 +19,10 @@ class EmbalseController extends Controller
 
     function __construct()
     {
-         $this->middleware('permission:ver-users|crear-users|editar-users|borrar-users', ['only' => ['index']]);
-         $this->middleware('permission:crear-users', ['only' => ['create','store']]);
-         $this->middleware('permission:editar-users', ['only' => ['edit','update']]);
-         $this->middleware('permission:borrar-users', ['only' => ['destroy']]);
+         $this->middleware('permission:ver-embalses|crear-embalses|editar-embalses|borrar-embalses', ['only' => ['index']]);
+         $this->middleware('permission:crear-embalses', ['only' => ['create','store']]);
+         $this->middleware('permission:editar-embalses', ['only' => ['edit','update']]);
+         $this->middleware('permission:borrar-embalses', ['only' => ['destroy']]);
     }
     public function index()
     {
