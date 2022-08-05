@@ -16,7 +16,7 @@
                         <span class="card-title">Create Dique Toma</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('dique-tomas.store') }}"  role="form" enctype="multipart/form-data">
+<form method="POST" action="{{ route('diquetoma.store') }}" role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('dique-toma.form')

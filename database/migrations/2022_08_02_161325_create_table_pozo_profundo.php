@@ -18,12 +18,12 @@ return new class extends Migration
             $table->unsignedBigInteger('reg')->comment('por descubrir');
             $table->string('nombre')->comment('nombre pozo profundo');
             $table->unsignedBigInteger('estado');
-            $table->unsignedBigInteger('municipio');  
-            $table->unsignedBigInteger('parroquia'); 
+            $table->unsignedBigInteger('municipio');
+            $table->unsignedBigInteger('parroquia');
             $table->string('desc_ubicacion')->comment('Por definir');
-            $table->string('utm_a'); 
+            $table->string('utm_a');
             $table->string('utm_b');
-            $table->unsignedBigInteger('acueducto'); 
+            $table->unsignedBigInteger('acueducto');
             $table->string('proposito')->comment('proposito de uso');
             $table->string('propietario')->comment('propietario');
             $table->unsignedDecimal('caudal_diseno');
