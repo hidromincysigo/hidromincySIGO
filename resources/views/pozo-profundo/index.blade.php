@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('pozo-profundos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+<a href="{{ route('pozoprofundos.create') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -35,7 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 										<th>Nombre</th>
 										<th>Estado</th>
 										<th>Municipio</th>
@@ -54,7 +54,7 @@
                                     @foreach ($pozoProfundos as $pozoProfundo)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 											<td>{{ $pozoProfundo->nombre }}</td>
 											<td>{{ $pozoProfundo->estado }}</td>
 											<td>{{ $pozoProfundo->municipio }}</td>
@@ -67,9 +67,11 @@
 											<td>{{ $pozoProfundo->caudal_diseno }}</td>
 
                                             <td>
-                                                <form action="{{ route('pozo-profundos.destroy',$pozoProfundo->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('pozo-profundos.show',$pozoProfundo->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('pozo-profundos.edit',$pozoProfundo->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+<form action="{{ route('pozoprofundos.destroy',$pozoProfundo->id) }}" method="POST">
+    <a class="btn btn-sm btn-primary " href="{{ route('pozosprofundos.show',$pozoProfundo->id) }}"><i
+            class="fa fa-fw fa-eye"></i> Show</a>
+    <a class="btn btn-sm btn-success" href="{{ route('pozosprofundos.edit',$pozoProfundo->id) }}"><i
+            class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

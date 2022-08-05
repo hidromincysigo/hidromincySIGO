@@ -49,7 +49,7 @@ Route::resource('acueducto', AcueductoController::class);
 Route::resource('embalses', EmbalseController::class);
 Route::resource('diquetoma', DiqueTomaController::class);
 Route::resource('tomarios', TomaRioController::class);
-Route::resource('pozosprofundos', PozoProfundoController::class);
+Route::resource('pozoprofundos', PozoProfundoController::class);
 
 
 // Route::get('/Procesos_Hidricos/Captacion/Embalses',

@@ -56,8 +56,11 @@ class PozoProfundo extends Model implements Auditable
      *
      * @var array
      */
-    protected $fillable = ['nombre','estado','municipio','parroquia','sector','coordenadas','acueducto','proposito','propietario','caudal_diseno'];
+  //  protected $fillable = ['nombre','estado','municipio','parroquia','sector','coordenadas','acueducto','proposito','propietario','caudal_diseno'];
 
+
+    protected $guarded =['id','created_at','updated_at' ];
+    protected $dates = ['deleted_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -66,7 +69,7 @@ class PozoProfundo extends Model implements Auditable
     {
         return $this->hasOne('App\Models\Acueducto', 'id', 'acueducto');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -74,7 +77,7 @@ class PozoProfundo extends Model implements Auditable
     {
         return $this->hasOne('App\Models\Estado', 'id', 'estado');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -82,7 +85,7 @@ class PozoProfundo extends Model implements Auditable
     {
         return $this->hasOne('App\Models\Municipio', 'id', 'municipio');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -90,7 +93,7 @@ class PozoProfundo extends Model implements Auditable
     {
         return $this->hasOne('App\Models\Parroquia', 'id', 'parroquia');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -98,6 +101,6 @@ class PozoProfundo extends Model implements Auditable
     {
         return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'coordenadas');
     }
-    
+
 
 }

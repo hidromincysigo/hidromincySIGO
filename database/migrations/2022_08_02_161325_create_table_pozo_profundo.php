@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pozo_profundo', function (Blueprint $table) {
+        Schema::create('pozo_profundos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('reg')->comment('por descubrir');
             $table->string('nombre')->comment('nombre pozo profundo');
@@ -43,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_pozo_profundo');
+        Schema::dropIfExists('table_pozo_profundos');
     }
 };
