@@ -8,6 +8,7 @@ use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\AcueductoController;
 use App\Http\Controllers\EmbalseController;
 use App\Http\Controllers\DiqueTomaController;
+use App\Http\Controllers\PozoProfundoController;
 use App\Http\Controllers\TomaRioController;
 
 /*
@@ -41,19 +42,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/auditar',[AuditsController::class,'index'])->name('auditar.index');
 
 });
-
-
-
 //// rutas que se deben optimizar ////
-
-
 // REGISTRO //
-
 
 Route::resource('acueducto', AcueductoController::class);
 Route::resource('embalses', EmbalseController::class);
 Route::resource('diquetoma', DiqueTomaController::class);
 Route::resource('tomarios', TomaRioController::class);
+Route::resource('pozosprofundos', PozoProfundoController::class);
 
 
 // Route::get('/Procesos_Hidricos/Captacion/Embalses',

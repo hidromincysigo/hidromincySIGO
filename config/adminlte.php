@@ -242,12 +242,12 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
-   
+
         [
             'text'        => 'PANEL ADMINISTRATIVO',
             'url'         => 'home',
             'icon'        => ' fa-fw fas fa-table',
-        
+
         ],
         ['header' => 'Seguridad'],
         [
@@ -265,42 +265,48 @@ return [
 
         [
             'text' => 'Auditoria de Eventos',
-            'url'  => 'auditar',            
+            'url'  => 'auditar',
             'icon' => 'fa-fw fas fa-file',                    ],
         ['header' => 'SISTEMA PRINCIPAL'],
         [
             'text'    => 'REGISTRO',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
-               
+
                 [
                     'text'    => 'Procesos Hidricos',
-                
+
                     'submenu' => [
                         [
                             'text' => 'Captación',
-                        
+
                             'submenu' => [
                                 [
                                     'text' => 'Embalses',
-                                    'url'  => '/Procesos_Hidricos/Captacion/Embalses',
+                                    'url'  => 'embalses',
+                                    'can'  => 'ver-embalses',
                                 ],
                                 [
                                     'text' => 'Dique Toma',
-                                    'url'  => '#',
+                                    'url'  => 'diquetoma',
+                                    'can'  => 'ver-diquetoma',
+
                                 ],
                                 [
                                     'text' => 'Toma Rio',
-                                    'url'  => '#',
+                                    'url'  => 'tomarios',
+                                    'can'  => 'ver-tomarios',
                                 ],
                                 [
                                     'text' => 'Pozo Profundo',
-                                    'url'  => '#',
+                                    'url'  => 'pozosprofundos',
+                                    'can'  => 'ver-pozoprofundo',
                                 ],
                             ],
                         ],
                         [
                             'text'    => 'level_two',
+                            'can' =>'prueba',
                             'url'     => '#',
                             'submenu' => [
                                 [
@@ -319,10 +325,12 @@ return [
                 [
                     'text'    => 'DIAGRAMA ESCADA',
                     'url'     => '#',
+                           'can' =>'prueba',
                     'submenu' => [
                         [
                             'text' => 'level_two',
                             'url'  => '#',
+
                         ],
                         [
                             'text'    => 'level_two',
@@ -344,6 +352,7 @@ return [
                 [
                     'text'    => 'SOLUCIONES HÍDRICAS',
                     'url'     => '#',
+                           'can' =>'prueba',
                     'submenu' => [
                         [
                             'text' => 'level_two',
@@ -365,10 +374,10 @@ return [
                         ],
                     ],
                 ],
-             
+
             ],
         ],
-       
+
     ],
 
     /*
