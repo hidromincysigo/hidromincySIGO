@@ -68,8 +68,8 @@
                                             <td>{{ ++$i }}</td>
 
 											<td>{{ $diqueToma->nombre }}</td>
-											<td>{{ $diqueToma->estado }}</td>
-											<td>{{ $diqueToma->acueducto }}</td>
+											<td>{{ $diqueToma->estadoDatos->estado }}</td>
+											<td>{{ $diqueToma->acueductoDatos->nombre }}</td>
 											<td>{{ $diqueToma->toma_rio }}</td>
 											<td>{{ $diqueToma->caudal_diseño }}</td>
 											<td>{{ $diqueToma->caudal_recibe }}</td>

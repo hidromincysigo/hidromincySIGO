@@ -1,25 +1,10 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Embalse
+    Estado
 @endsection
 
 @section('content')
-
-    <div class="container-fluid">
-        <div class="row mb-2">
-        <div class="col-sm-6">
-
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/home">INICIO</a></li>
-            <li class="breadcrumb-item active">listados  de Embalses</li>
-            </ol>
-        </div><!-- /.col -->
-        </div>
-    </div>
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -28,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Embalse') }}
+                                {{ __('Estado') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('embalses.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('estados.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -50,30 +35,28 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-
-										<th>Nombre</th>
+                                        
 										<th>Estado</th>
-										<th>Proposito</th>
-										<th>Acciones</th>
+										<th>Iso 3166-2</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($embalses as $embalse)
+                                    @foreach ($estados as $estado)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $embalse->nombre }}</td>
-											<td>{{ $embalse->estadoDatos->estado }}</td>
-											<td>{{ $embalse->proposito }}</td>
-											<td>{{ $embalse->propietario }}</td>
+											<td>{{ $estado->estado }}</td>
+											<td>{{ $estado->iso_3166-2 }}</td>
 
                                             <td>
-                                                <form action="{{ route('embalses.destroy',$embalse->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('embalses.show',$embalse->id) }}">ver</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('embalses.edit',$embalse->id) }}">editar</a>
+                                                <form action="{{ route('estados.destroy',$estado->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('estados.show',$estado->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('estados.edit',$estado->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -83,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $embalses->links() !!}
+                {!! $estados->links() !!}
             </div>
         </div>
     </div>

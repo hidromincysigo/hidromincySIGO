@@ -30,15 +30,15 @@
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
-                            {{ $embalse->estado }}
+                            {{ $embalse->estadoDatos->estado }}
                         </div>
                         <div class="form-group">
                             <strong>Municipio:</strong>
-                            {{ $embalse->municipio }}
+                            {{ $embalse->municipioDatos->municipio }}
                         </div>
                         <div class="form-group">
                             <strong>Parroquia:</strong>
-                            {{ $embalse->parroquia }}
+                            {{ $embalse->parroquiaDatos->parroquia }}
                         </div>
                         <div class="form-group">
                             <strong>Desc Ubicacion:</strong>

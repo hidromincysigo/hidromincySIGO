@@ -61,33 +61,33 @@ class DiqueToma extends Model implements Auditable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function acueducto()
+    public function acueductoDatos()
     {
-        return $this->hasOne('App\Models\Acueducto', 'id', 'acueducto');
+        return $this->belongsTo(Acueducto::class, 'acueducto');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function estado()
+    public function estadoDatos()
     {
-        return $this->hasOne('App\Models\Estado', 'id', 'estado');
+        return $this->belongsTo(Estado::class, 'estado');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function municipio()
+    public function municipioDatos()
     {
-        return $this->hasOne('App\Models\Municipio', 'id', 'municipio');
+        return $this->belongsTo(Municipio::class, 'municipio');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function parroquia()
+    public function parroquiaDatos()
     {
-        return $this->hasOne('App\Models\Parroquia', 'id', 'parroquia');
+        return $this->belongsTo(Parroquia::class, 'parroquia');
     }
     
 

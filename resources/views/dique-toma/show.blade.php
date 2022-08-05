@@ -14,23 +14,26 @@
                             <span class="card-title">Show Dique Toma</span>
                         </div>
                         <div class="float-right">
-<a class="btn btn-primary" href="{{ route('diquetoma.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('diquetoma.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-
                         <div class="form-group">
-                            <strong>Estado:</strong>
-                            {{ $diqueToma->estado }}
+                            <strong>Nombre:</strong>
+                            {{ $diqueToma->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Parroquia:</strong>
-                            {{ $diqueToma->parroquia }}
+                            <strong>Nombre:</strong>
+                            {{ $diqueToma->estadoDatos->estado }}
                         </div>
                         <div class="form-group">
                             <strong>Municipio:</strong>
-                            {{ $diqueToma->municipio }}
+                            {{ $diqueToma->municipioDatos->municipio }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Parroquia:</strong>
+                            {{ $diqueToma->parroquiaDatos->parroquia }}
                         </div>
                         <div class="form-group">
                             <strong>Ref Sector:</strong>
@@ -46,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Acueducto:</strong>
-                            {{ $diqueToma->acueducto }}
+                            {{ $diqueToma->acueductoDatos->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Toma Rio:</strong>
