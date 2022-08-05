@@ -11,12 +11,12 @@ class AcueductoController extends Controller
 
     function __construct()
     {
-         $this->middleware('permission:ver-users|crear-users|editar-users|borrar-users', ['only' => ['index']]);
-         $this->middleware('permission:crear-users', ['only' => ['create','store']]);
-         $this->middleware('permission:editar-users', ['only' => ['edit','update']]);
-         $this->middleware('permission:borrar-users', ['only' => ['destroy']]);
+       $this->middleware('permission:ver-Acueductos|crear-Acueductos|editar-Acueductos|borrar-Acueductos', ['only' => ['index']]);
+         $this->middleware('permission:crear-Acueductos', ['only' => ['create','store']]);
+         $this->middleware('permission:editar-Acueductos', ['only' => ['edit','update']]);
+         $this->middleware('permission:borrar-Acueductos', ['only' => ['destroy']]);
     }
-    
+
     public function index()
     {
         //$acueductos = Acueducto::paginate();
@@ -26,19 +26,19 @@ class AcueductoController extends Controller
 
       return view('acueducto.index', compact('acueductos'))
           ->with('i', (request()->input('page', 1) - 1) * $acueductos->perPage());
-           
-    
+
+
     }
 
-   
+
     public function create()
     {
-      
+
         $acueducto = new Acueducto();
         return view('acueducto.create', compact('acueducto'));
     }
 
-   
+
     public function store(Request $request)
     {
         //
@@ -50,7 +50,7 @@ class AcueductoController extends Controller
             ->with('success', 'Acueducto created successfully.');
     }
 
-  
+
     public function show($id)
     {
         //
@@ -69,7 +69,7 @@ class AcueductoController extends Controller
 
     }
 
- 
+
     public function update(Request $request, Acueducto $acueducto)
     {
        request()->validate(Acueducto::$rules);

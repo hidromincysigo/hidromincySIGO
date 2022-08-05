@@ -12,10 +12,10 @@ class PermissionSeeder extends Seeder
             //Operaciones sobre tabla roles
             'ver-users', 'crear-users', 'editar-users','borrar-users',
             'ver-roles', 'crear-roles', 'editar-roles','borrar-roles',
-            /// ---------------------- ROLES PRINCIPALES 
-            'ver-acueducto', 'crear-Acueductos', 'editar-Acueductos','borrar-Acueductos',
+            /// ---------------------- ROLES PRINCIPALES
+            'ver-acueductos', 'crear-Acueductos', 'editar-Acueductos','borrar-Acueductos',
             'ver-diquetoma', 'crear-diquetoma', 'editar-diquetoma','borrar-diquetoma',
-                          
+
         ];
 
         foreach($permisos as $permiso) {
