@@ -7,6 +7,9 @@ use App\Http\Controllers\UsuariosControllers;
 use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\AcueductoController;
 use App\Http\Controllers\EmbalseController;
+use App\Http\Controllers\DiqueTomaController;
+use App\Http\Controllers\TomaRioController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +39,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('/usuarios', UsuariosControllers::class);
 
     Route::get('/auditar',[AuditsController::class,'index'])->name('auditar.index');
-  
+
 });
 
 
@@ -47,10 +50,10 @@ Route::group(['middleware' => ['auth']], function() {
 // REGISTRO //
 
 
-
-
 Route::resource('acueducto', AcueductoController::class);
 Route::resource('embalses', EmbalseController::class);
+Route::resource('diquetoma', DiqueTomaController::class);
+Route::resource('tomarios', TomaRioController::class);
 
 
 // Route::get('/Procesos_Hidricos/Captacion/Embalses',
@@ -77,7 +80,3 @@ Route::resource('embalses', EmbalseController::class);
 // [RegistroController::class,'potabilizacionPortatiles'])->name('pot.Portatiles');
 // Route::post('/Procesos_Hidricos/Potabilizacion/Guardar_Plantas_Portatiles',
 // [RegistroController::class,'guardarPortatiles'])->name('guardar.Portatiles');
-
-
-
-

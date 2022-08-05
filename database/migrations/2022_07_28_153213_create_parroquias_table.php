@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('parroquias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('municipio_id');     
+            $table->unsignedBigInteger('municipio_id');
 	        $table->string('parroquia')->comment('nombre de la parroquia');
 	        $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->timestamps();

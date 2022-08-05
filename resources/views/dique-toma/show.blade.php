@@ -14,12 +14,12 @@
                             <span class="card-title">Show Dique Toma</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('dique-tomas.index') }}"> Back</a>
+<a class="btn btn-primary" href="{{ route('diquetoma.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Estado:</strong>
                             {{ $diqueToma->estado }}

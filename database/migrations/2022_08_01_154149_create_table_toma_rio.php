@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre')->comment('nombre toma rio');
             $table->unsignedBigInteger('estado');
-            $table->unsignedBigInteger('municipio');  
-            $table->unsignedBigInteger('parroquia'); 
+            $table->unsignedBigInteger('municipio');
+            $table->unsignedBigInteger('parroquia');
             $table->string('sector')->comment('Por definir');
             $table->unsignedBigInteger('coordenadas')->comment('coordenadas');
             $table->foreign('coordenadas')->references('id')->on('ubicacion_geografica');

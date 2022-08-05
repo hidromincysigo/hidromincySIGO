@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('dique-tomas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+<a href="{{ route('diquetoma.create') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -35,7 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 										<th>Estado</th>
 										<th>Parroquia</th>
 										<th>Municipio</th>
@@ -55,7 +55,7 @@
                                     @foreach ($diqueTomas as $diqueToma)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 											<td>{{ $diqueToma->estado }}</td>
 											<td>{{ $diqueToma->parroquia }}</td>
 											<td>{{ $diqueToma->municipio }}</td>
@@ -69,9 +69,11 @@
 											<td>{{ $diqueToma->estatus }}</td>
 
                                             <td>
-                                                <form action="{{ route('dique-tomas.destroy',$diqueToma->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('dique-tomas.show',$diqueToma->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('dique-tomas.edit',$diqueToma->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+<form action="{{ route('diquetoma.destroy',$diqueToma->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('diquetoma.show',$diqueToma->id) }}"><i
+                                                            class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('diquetoma.edit',$diqueToma->id) }}"><i
+                                                            class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
