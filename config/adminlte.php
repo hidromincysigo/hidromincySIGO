@@ -299,7 +299,7 @@ return [
                                 ],
                                 [
                                     'text' => 'Pozo Profundo',
-                                    'url'  => 'pozosprofundos',
+                                    'url'  => 'pozoprofundos',
                                     'can'  => 'ver-pozoprofundo',
                                 ],
                             ],
