@@ -21,17 +21,21 @@ return new class extends Migration
         });
         Schema::create('municipios', function (Blueprint $table) {
             $table->id();
-            $table->string('municipio')->comment('nombre del municipio');
-            $table->string('iso_3166-2');
+            $table->unsignedBigInteger('estado_id');
+	        $table->string('municipio')->comment('nombre del municipio');
+	        $table->foreign('estado_id')->references('id')->on('estados');
+            $table->timestamps();
+        });
+        Schema::create('parroquias', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('municipio_id');
+            $table->string('parroquia')->comment('nombre de la parroquia');
+            $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->timestamps();
         });
 
-        Schema::create('parroquias', function (Blueprint $table) {
-            $table->id();
-            $table->string('parroquia')->comment('nombre de la parroquia');
-            $table->string('iso_3166-2');
-            $table->timestamps();
-        });
+
+
         Schema::create('ciudades', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('estado_id');
@@ -40,7 +44,7 @@ return new class extends Migration
 	        $table->foreign('estado_id')->references('id')->on('estados');
             $table->timestamps();
         });
-        Schema::create('sectores', function (Blueprint $table) {
+         Schema::create('sectores', function (Blueprint $table) {
             $table->id();
             $table->string('sector')->comment('nombre del sector');
             $table->string('iso_3166-2');

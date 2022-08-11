@@ -33,7 +33,9 @@ class Sistema extends Model implements Auditable
      *
      * @var array
      */
-    protected $fillable = ['sistemas'];
+
+    protected $table = "sistema";
+    //protected $fillable = ['sistemas'];
 
 
 

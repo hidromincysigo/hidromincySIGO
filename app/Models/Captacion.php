@@ -1,33 +1,19 @@
 <?php
 
 namespace App\Models;
-use OwenIt\Auditing\Contracts\Auditable;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class Captacion
- *
- * @property $id
- * @property $tipo_fuente
- * @property $fuente
- * @property $acueducto
- * @property $cuota
- * @property $extraccion
- * @property $observacion
- * @property $deleted_at
- * @property $created_at
- * @property $updated_at
- *
- * @property Acueducto $acueducto
- * @property TipoFuente $tipoFuente
- * @package App
- * @mixin \Illuminate\Database\Eloquent\Builder
- */
+
 class Captacion extends Model implements Auditable
 {
+    use HasFactory;
     use SoftDeletes;
     use \OwenIt\Auditing\Auditable;
+
 
     static $rules = [
 		'tipo_fuente' => 'required',
@@ -38,30 +24,22 @@ class Captacion extends Model implements Auditable
 		'observacion' => 'required',
     ];
 
+    protected $table = "captacion";
     protected $perPage = 20;
+   // protected $fillable = ['tipo_fuente','fuente','acueducto','cuota','extraccion','observacion'];
 
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['tipo_fuente','fuente','acueducto','cuota','extraccion','observacion'];
-
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
     public function acueducto()
-    {
-        return $this->hasOne('App\Models\Acueducto', 'id', 'acueducto');
+    { 
+        return $this->hasOne(Acueducto::class, 'id', 'acueducto');
+       // return $this->hasOne('App\Models\Acueducto', 'id', 'acueducto');
+
+
     }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
+
     public function tipoFuente()
     {
-        return $this->hasOne('App\Models\TipoFuente', 'id', 'tipo_fuente');
+        return $this->hasOne(TipoFuente::class, 'id', 'tipo_fuente');
+       // return $this->hasOne('App\Models\TipoFuente', 'id', 'tipo_fuente');
     }
     
 

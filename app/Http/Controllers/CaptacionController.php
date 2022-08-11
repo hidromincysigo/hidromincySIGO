@@ -5,17 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Captacion;
 use Illuminate\Http\Request;
 
-/**
- * Class CaptacionController
- * @package App\Http\Controllers
- */
 class CaptacionController extends Controller
+
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */ 
+     * CREADO POR -> GLINYER FRANCO.
+     *  SE CREA EL CONSTRUCTOR ASIGNANDO LOS PERMISOS.
+    */
     function __construct()
     {
         $this->middleware('permission:ver-captacion|crear-captacion|editar-captacion|borrar-captacion', ['only' => ['index']]);
@@ -24,60 +21,44 @@ class CaptacionController extends Controller
         $this->middleware('permission:borrar-captacion', ['only' => ['destroy']]);
     }
 
+
     public function index()
     {
-        $captacions = Captacion::paginate();
+        //
+        $cap = Captacion::all();
 
-        return view('captacion.index', compact('captacions'))
-            ->with('i', (request()->input('page', 1) - 1) * $captacions->perPage());
+       // return view('captacion.index', compact('cap'))
+         //   ->with('i', (request()->input('page', 1) - 1) * $cap->perPage());
+
+            dd($cap);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
-        $captacion = new Captacion();
+         $captacion = new Captacion();
         return view('captacion.create', compact('captacion'));
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
         request()->validate(Captacion::$rules);
-
         $captacion = Captacion::create($request->all());
-
         return redirect()->route('captacions.index')
-            ->with('success', 'Captacion created successfully.');
+            ->with('success', 'se ha creado la captacion correctamente');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $captacion = Captacion::find($id);
-
         return view('captacion.show', compact('captacion'));
+
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
         $captacion = Captacion::find($id);
@@ -85,13 +66,7 @@ class CaptacionController extends Controller
         return view('captacion.edit', compact('captacion'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Captacion $captacion
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, Captacion $captacion)
     {
         request()->validate(Captacion::$rules);
@@ -99,19 +74,17 @@ class CaptacionController extends Controller
         $captacion->update($request->all());
 
         return redirect()->route('captacions.index')
-            ->with('success', 'Captacion updated successfully');
+            ->with('success', 'se ha actualizado la captacion correctamente');
     }
 
-    /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
-     */
+  
     public function destroy($id)
     {
-        $captacion = Captacion::find($id)->delete();
-
-        return redirect()->route('captacions.index')
-            ->with('success', 'Captacion deleted successfully');
+        {
+            $captacion = Captacion::find($id)->delete();
+    
+            return redirect()->route('captacions.index')
+                ->with('success', 'se ha eliminado la captacion correctamente');
+        }
     }
 }

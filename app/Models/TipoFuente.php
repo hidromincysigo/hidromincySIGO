@@ -34,7 +34,8 @@ class TipoFuente extends Model implements Auditable
      *
      * @var array
      */
-    protected $fillable = ['tipo'];
+    protected $table = "tipo_fuente";
+   // protected $fillable = ['tipo'];
 
 
     /**
