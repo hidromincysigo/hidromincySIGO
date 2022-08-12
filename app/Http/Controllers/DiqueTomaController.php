@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DiqueToma;
+use App\Models\Estado;
 use Illuminate\Http\Request;
 
 /**
@@ -81,9 +82,14 @@ class DiqueTomaController extends Controller
      */
     public function edit($id)
     {
-        $diqueToma = DiqueToma::find($id);
+        $diqueToma = DiqueToma::join('estados','estados.id','dique_tomas.estado')
+        ->join('municipios','municipios.id','dique_tomas.municipio')
+        ->join('parroquias','parroquias.id','dique_tomas.parroquia')
+        ->find($id);
 
-        return view('dique-toma.edit', compact('diqueToma'));
+        $estados = Estado::pluck('estado','id')->toArray();
+
+        return view('dique-toma.edit', compact('diqueToma','estados'));
     }
 
     /**

@@ -16,7 +16,7 @@
                         <span class="card-title">Create Toma Rio</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('toma-rios.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('tomarios.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('toma-rio.form')

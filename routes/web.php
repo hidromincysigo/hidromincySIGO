@@ -76,3 +76,17 @@ Route::resource('pozoprofundos', PozoProfundoController::class);
 // [RegistroController::class,'potabilizacionPortatiles'])->name('pot.Portatiles');
 // Route::post('/Procesos_Hidricos/Potabilizacion/Guardar_Plantas_Portatiles',
 // [RegistroController::class,'guardarPortatiles'])->name('guardar.Portatiles');
+
+Route::view('/aduccion/Estacion_de_bombeo','registro.aduccionEB')->name('aduccion.EB');
+Route::view('/capacitacion/Dique_toma','registro.captacionDique')->name('capacitacion.Dique');
+Route::view('/capacitacion/Embalses','registro.captacionEmbalses')->name('capacitacion.Embalses');
+Route::view('/capacitacion/Toma_rio','registro.captacionToma')->name('capacitacion.Toma');
+Route::view('/distribucion/Ciclo_distribucion','registro.distribucionCiclo')->name('distribucion.Ciclo');
+Route::view('/distribucion/Estacion_de_bombeo','registro.distribucionEB')->name('distribucion.EB');
+Route::view('/potabilizacion/Plantas_desalinizadoras','registro.plantasDeszanilizadoras')->name('potabilizacion.Desa');
+Route::view('/potabilizacion/Plantas_de_filtracion','registro.potabilizacionFiltracion')->name('potabilizacion.Filt');
+Route::view('/potabilizacion/Plantas_portatiles','registro.potabilizacionPortatiles')->name('potabilizacion.Port');
+Route::view('/potabilizacion/Plantas_potabilizadoras','registro.potabilizacionPotabilizadoras')->name('potabilizacion.Pota');
+
+// [RegistroController::class,'guardarPortatiles'])->name('guardar.Portatiles');
+

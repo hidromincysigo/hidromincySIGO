@@ -55,25 +55,25 @@ class TomaRio extends Model implements Auditable
      */
     public function estado()
     {
-        return $this->hasOne('App\Models\Estado', 'id', 'estado');
+        return $this->hasOne('App\Models\Estado', 'estado');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function municipio()
     {
-        return $this->hasOne('App\Models\Municipio', 'id', 'municipio');
+        return $this->hasOne('App\Models\Municipio', 'municipio');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function parroquia()
     {
-        return $this->hasOne('App\Models\Parroquia', 'id', 'parroquia');
+        return $this->hasOne('App\Models\Parroquia', 'parroquia');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
