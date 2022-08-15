@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('municipios', function (Blueprint $table) {
+        Schema::create('sistemas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('estado_id');
-	        $table->string('municipio')->comment('nombre del municipio');
-	        $table->foreign('estado_id')->references('id')->on('estados');
+            $table->string('sistemas')->comment('sistema');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('municipios');
+        Schema::dropIfExists('table_sistemas');
     }
 };

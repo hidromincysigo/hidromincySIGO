@@ -13,6 +13,7 @@ class UsersTableSeeder extends Seeder
 
         $user = User::create([
             'name' => 'SuperAdmin',
+            'dni' => '12345678',
             'email' => 'admin@admin.com',         
             'password' => bcrypt('123456789'),
         ]);
@@ -20,6 +21,7 @@ class UsersTableSeeder extends Seeder
 
         $user = User::create([
             'name' => 'SuperAdmin2',
+            'dni' => '123456789',
             'email' => 'admin2@admin.com',         
             'password' => bcrypt('123456789'),
         ]);

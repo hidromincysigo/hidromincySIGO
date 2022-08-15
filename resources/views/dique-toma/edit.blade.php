@@ -20,7 +20,7 @@ Update Dique Toma
                         {{ method_field('PATCH') }}
                         @csrf
 
-                        @include('dique-toma.formn')
+                        @include('dique-toma.form')
 
                     </form>
                 </div>

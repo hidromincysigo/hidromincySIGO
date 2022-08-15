@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function (Blueprint $table) {
+        Schema::create('tipo_fuentes', function (Blueprint $table) {
             $table->id();
-            $table->string('estado')->comment('nombre del estado');
-	        $table->string('iso_3166-2');
+            $table->string('tipo')->comment('tipo de fuente');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('table_tipo_captacion');
     }
 };

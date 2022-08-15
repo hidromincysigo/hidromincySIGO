@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\DiqueToma;
 use App\Models\Estado;
+use App\Models\Municipio;
+use App\Models\Parroquia;
+use DB;
 use Illuminate\Http\Request;
 
 /**
@@ -42,7 +45,8 @@ class DiqueTomaController extends Controller
     public function create()
     {
         $diqueToma = new DiqueToma();
-        return view('dique-toma.create', compact('diqueToma'));
+        $estados = Estado::get()->all();
+        return view('dique-toma.create',['diqueToma' => $diqueToma, 'estados' => $estados]);
     }
 
     /**
@@ -82,14 +86,23 @@ class DiqueTomaController extends Controller
      */
     public function edit($id)
     {
-        $diqueToma = DiqueToma::join('estados','estados.id','dique_tomas.estado')
+        DB::enableQueryLog();
+        // dd($id);
+        $diqueToma = DiqueToma::join('estados as id_estado','id_estado.id','dique_tomas.estado')
         ->join('municipios','municipios.id','dique_tomas.municipio')
         ->join('parroquias','parroquias.id','dique_tomas.parroquia')
+        ->join('acueductos','acueductos.id','dique_tomas.acueducto')
         ->find($id);
+        // ->where('dique_tomas.id','=',$id)->get();
+        // dd($id);
 
-        $estados = Estado::pluck('estado','id')->toArray();
+        $q = DB::getQueryLog();
+        // dd($q, $diqueToma);
 
-        return view('dique-toma.edit', compact('diqueToma','estados'));
+        $estados = Estado::get()->all();
+        // dd($diqueToma, $estados);
+
+        return view('dique-toma.edit', ['diqueToma' => $diqueToma, 'estados' => $estados]);
     }
 
     /**

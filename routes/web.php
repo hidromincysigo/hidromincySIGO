@@ -6,10 +6,12 @@ use App\Http\Controllers\RolesControllers;
 use App\Http\Controllers\UsuariosControllers;
 use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\AcueductoController;
+use App\Http\Controllers\CaptacionController;
 use App\Http\Controllers\EmbalseController;
 use App\Http\Controllers\DiqueTomaController;
 use App\Http\Controllers\PozoProfundoController;
 use App\Http\Controllers\TomaRioController;
+use App\Http\Controllers\DireccionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,12 +46,15 @@ Route::group(['middleware' => ['auth']], function() {
 });
 //// rutas que se deben optimizar ////
 // REGISTRO //
-
+Route::resource('captacion', CaptacionController::class);
 Route::resource('acueducto', AcueductoController::class);
 Route::resource('embalses', EmbalseController::class);
 Route::resource('diquetoma', DiqueTomaController::class);
 Route::resource('tomarios', TomaRioController::class);
 Route::resource('pozoprofundos', PozoProfundoController::class);
+
+Route::post('/llenarMunicipios',[DireccionController::class, 'llenarMunicipios']);
+Route::post('/llenarParroquias',[DireccionController::class, 'llenarParroquias']);
 
 
 // Route::get('/Procesos_Hidricos/Captacion/Embalses',

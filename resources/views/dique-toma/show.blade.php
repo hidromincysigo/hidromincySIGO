@@ -46,10 +46,10 @@
                             <strong>Utm B:</strong>
                             {{ $diqueToma->utm_b }}
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <strong>Acueducto:</strong>
                             {{ $diqueToma->acueductoDatos->nombre }}
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <strong>Toma Rio:</strong>
                             {{ $diqueToma->toma_rio }}

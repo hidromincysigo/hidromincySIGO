@@ -25,7 +25,8 @@ class Acueducto extends Model implements Auditable
      *
      * @var array
      */
-    protected $fillable = ['nombre','estado','capacidad_distribucion','capacidad_modificada'];
+    protected $table = "acueducto";
+     //protected $fillable = ['nombre','estado','capacidad_distribucion','capacidad_modificada'];
 
 
     /**

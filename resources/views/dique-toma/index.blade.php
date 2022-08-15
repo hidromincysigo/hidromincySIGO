@@ -53,7 +53,7 @@
 
 										<th>Nombre</th>
 										<th>Estado</th>
-										<th>Acueducto</th>
+										{{-- <th>Acueducto</th> --}}
 										<th>Toma Rio</th>
 										<th>Caudal Diseño</th>
 										<th>Caudal Recibe</th>
@@ -69,7 +69,7 @@
 
 											<td>{{ $diqueToma->nombre }}</td>
 											<td>{{ $diqueToma->estadoDatos->estado }}</td>
-											<td>{{ $diqueToma->acueductoDatos->nombre }}</td>
+											{{-- <td>{{ $diqueToma->acueductoDatos->nombre }}</td> --}}
 											<td>{{ $diqueToma->toma_rio }}</td>
 											<td>{{ $diqueToma->caudal_diseño }}</td>
 											<td>{{ $diqueToma->caudal_recibe }}</td>
