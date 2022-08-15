@@ -55,7 +55,7 @@ class TomaRio extends Model implements Auditable
      */
     public function estado()
     {
-        return $this->hasOne('App\Models\Estado', 'id', 'estado');
+        return $this->hasOne('App\Models\Estado', 'id', 'id_estado');
     }
     
     /**
@@ -63,7 +63,7 @@ class TomaRio extends Model implements Auditable
      */
     public function municipio()
     {
-        return $this->hasOne('App\Models\Municipio', 'id', 'municipio');
+        return $this->hasOne('App\Models\Municipio', 'id', 'id_municipio');
     }
     
     /**
@@ -71,7 +71,7 @@ class TomaRio extends Model implements Auditable
      */
     public function parroquia()
     {
-        return $this->hasOne('App\Models\Parroquia', 'id', 'parroquia');
+        return $this->hasOne('App\Models\Parroquia', 'id', 'id_parroquia');
     }
     
     /**
@@ -79,7 +79,7 @@ class TomaRio extends Model implements Auditable
      */
     public function ubicacionGeografica()
     {
-        return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'coordenadas');
+        return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'id_coordenadas');
     }
     
 

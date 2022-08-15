@@ -65,7 +65,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $embalse->nombre }}</td>
-											<td>{{ $embalse->estadoDatos->estado }}</td>
+											<td>{{ $embalse->estado->estado }}</td>
 											<td>{{ $embalse->proposito }}</td>
 											<td>{{ $embalse->propietario }}</td>
 

@@ -67,7 +67,7 @@ class PozoProfundo extends Model implements Auditable
      */
     public function acueducto()
     {
-        return $this->hasOne('App\Models\Acueducto', 'id', 'acueducto');
+        return $this->hasOne('App\Models\Acueducto', 'id', 'id_acueducto');
     }
 
     /**
@@ -75,7 +75,7 @@ class PozoProfundo extends Model implements Auditable
      */
     public function estado()
     {
-        return $this->hasOne('App\Models\Estado', 'id', 'estado');
+        return $this->hasOne('App\Models\Estado', 'id', 'id_estado');
     }
 
     /**
@@ -83,7 +83,7 @@ class PozoProfundo extends Model implements Auditable
      */
     public function municipio()
     {
-        return $this->hasOne('App\Models\Municipio', 'id', 'municipio');
+        return $this->hasOne('App\Models\Municipio', 'id', 'id_municipio');
     }
 
     /**
@@ -91,7 +91,7 @@ class PozoProfundo extends Model implements Auditable
      */
     public function parroquia()
     {
-        return $this->hasOne('App\Models\Parroquia', 'id', 'parroquia');
+        return $this->hasOne('App\Models\Parroquia', 'id', 'id_parroquia');
     }
 
     /**
@@ -99,7 +99,7 @@ class PozoProfundo extends Model implements Auditable
      */
     public function ubicacionGeografica()
     {
-        return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'coordenadas');
+        return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'id_coordenadas');
     }
 
 

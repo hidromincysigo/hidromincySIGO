@@ -64,25 +64,25 @@ class Embalse extends Model implements Auditable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function estadoDatos()
+    public function estado()
     {
-        return $this->belongsTo(Estado::class, 'estado');
+        return $this->belongsTo(Estado::class, 'id_estado');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function municipioDatos()
+    public function municipio()
     {
-        return $this->belongsTo(Municipio::class, 'municipio');
+        return $this->belongsTo(Municipio::class, 'id_municipio');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function parroquiaDatos()
+    public function parroquia()
     {
-        return $this->belongsTo(Parroquia::class, 'parroquia');
+        return $this->belongsTo(Parroquia::class, 'id_parroquia');
     }
     
 

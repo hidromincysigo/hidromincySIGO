@@ -13,17 +13,17 @@
         </div>
         <div class="form-group">
             {{ Form::label('estado') }}
-            {{ Form::text('estado', $embalse->estado, ['class' => 'form-control' . ($errors->has('estado') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
+            {{ Form::text('estado', $embalse->id_estado, ['class' => 'form-control' . ($errors->has('estado') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
             {!! $errors->first('estado', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('municipio') }}
-            {{ Form::text('municipio', $embalse->municipio, ['class' => 'form-control' . ($errors->has('municipio') ? ' is-invalid' : ''), 'placeholder' => 'Municipio']) }}
+            {{ Form::text('municipio', $embalse->id_municipio, ['class' => 'form-control' . ($errors->has('municipio') ? ' is-invalid' : ''), 'placeholder' => 'Municipio']) }}
             {!! $errors->first('municipio', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('parroquia') }}
-            {{ Form::text('parroquia', $embalse->parroquia, ['class' => 'form-control' . ($errors->has('parroquia') ? ' is-invalid' : ''), 'placeholder' => 'Parroquia']) }}
+            {{ Form::text('parroquia', $embalse->id_parroquia, ['class' => 'form-control' . ($errors->has('parroquia') ? ' is-invalid' : ''), 'placeholder' => 'Parroquia']) }}
             {!! $errors->first('parroquia', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
