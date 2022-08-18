@@ -46,8 +46,10 @@ return new class extends Migration
         });
          Schema::create('sectores', function (Blueprint $table) {
             $table->id();
-            $table->string('sector')->comment('nombre del sector');
-            $table->string('iso_3166-2');
+            $table->string('sector');
+            $table->unsignedBigInteger('id_parroquia');
+            $table->foreign('id_parroquia')->references('id')->on('parroquias');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
