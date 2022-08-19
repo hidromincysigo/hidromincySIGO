@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 /**
  * Class FabricanteController
+ * @package App\Http\Controllers
  */
 class FabricanteController extends Controller
 {
@@ -31,14 +32,13 @@ class FabricanteController extends Controller
     public function create()
     {
         $fabricante = new Fabricante();
-
         return view('fabricante.create', compact('fabricante'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -54,7 +54,7 @@ class FabricanteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -67,7 +67,7 @@ class FabricanteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -80,8 +80,8 @@ class FabricanteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Fabricante  $fabricante
+     * @param  \Illuminate\Http\Request $request
+     * @param  Fabricante $fabricante
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Fabricante $fabricante)
@@ -95,9 +95,8 @@ class FabricanteController extends Controller
     }
 
     /**
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\RedirectResponse
-     *
      * @throws \Exception
      */
     public function destroy($id)

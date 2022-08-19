@@ -6,6 +6,7 @@ use App\Models\Estado;
 use App\Models\Municipio;
 use App\Models\Parroquia;
 use DB;
+use App\Models\Plantas;
 use Illuminate\Http\Request;
 
 class PlantasController extends Controller
@@ -45,10 +46,10 @@ class PlantasController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Plantas  $plantas
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Plantas $plantas)
     {
         //
     }
@@ -56,10 +57,10 @@ class PlantasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Plantas  $plantas
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plantas $plantas)
     {
         //
     }
@@ -68,10 +69,10 @@ class PlantasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Plantas  $plantas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Plantas $plantas)
     {
         //
     }
@@ -79,10 +80,10 @@ class PlantasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Plantas  $plantas
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Plantas $plantas)
     {
         //
     }
