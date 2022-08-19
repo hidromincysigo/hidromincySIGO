@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 /**
  * Class SistemaController
- * @package App\Http\Controllers
  */
 class SistemaController extends Controller
 {
@@ -16,14 +15,14 @@ class SistemaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    function __construct()
+    public function __construct()
     {
         $this->middleware('permission:ver-sistema|crear-sistema|editar-sistema|borrar-sistema', ['only' => ['index']]);
-        $this->middleware('permission:crear-sistema', ['only' => ['create','store']]);
-        $this->middleware('permission:editar-sistema', ['only' => ['edit','update']]);
+        $this->middleware('permission:crear-sistema', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editar-sistema', ['only' => ['edit', 'update']]);
         $this->middleware('permission:borrar-sistema', ['only' => ['destroy']]);
     }
-    
+
     public function index()
     {
         $sistemas = Sistema::paginate();
@@ -40,13 +39,14 @@ class SistemaController extends Controller
     public function create()
     {
         $sistema = new Sistema();
+
         return view('sistema.create', compact('sistema'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -62,7 +62,7 @@ class SistemaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -75,7 +75,7 @@ class SistemaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -88,8 +88,8 @@ class SistemaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Sistema $sistema
+     * @param  \Illuminate\Http\Request  $request
+     * @param  Sistema  $sistema
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Sistema $sistema)
@@ -103,8 +103,9 @@ class SistemaController extends Controller
     }
 
     /**
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
+     *
      * @throws \Exception
      */
     public function destroy($id)

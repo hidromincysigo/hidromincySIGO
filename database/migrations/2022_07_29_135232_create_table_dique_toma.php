@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_parroquia');
             $table->unsignedBigInteger('id_municipio');
             $table->string('desc_ubicacion')->comment('referencia sector');
-            $table->unsignedDecimal('utm_a', $precision=15);
-            $table->unsignedDecimal('utm_b', $precision=15);
+            $table->unsignedBigInteger('id_coordenadas')->comment('coordenadas');
+            $table->foreign('id_coordenadas')->references('id')->on('ubicacion_geografica');
             $table->unsignedBigInteger('id_acueducto');
             $table->string('toma_rio');
             $table->unsignedDecimal('caudal_diseno');
@@ -45,6 +45,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_dique_toma');
+        Schema::dropIfExists('dique_tomas');
     }
 };

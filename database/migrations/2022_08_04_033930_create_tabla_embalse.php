@@ -18,11 +18,11 @@ return new class extends Migration
             $table->unsignedBigInteger('reg')->comment('por descubrir');
             $table->string('nombre')->comment('nombre pozo profundo');
             $table->unsignedBigInteger('id_estado');
-            $table->unsignedBigInteger('id_municipio');  
-            $table->unsignedBigInteger('id_parroquia'); 
+            $table->unsignedBigInteger('id_municipio');
+            $table->unsignedBigInteger('id_parroquia');
             $table->string('desc_ubicacion')->comment('Por definir');
-            $table->string('utm_a'); 
-            $table->string('utm_b');
+            $table->unsignedBigInteger('id_coordenadas')->comment('coordenadas');
+            $table->foreign('id_coordenadas')->references('id')->on('ubicacion_geografica');
             $table->string('proposito')->comment('proposito de uso');
             $table->string('propietario')->comment('propietario');
             $table->string('constructora')->comment('constructora');
@@ -42,6 +42,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tabla_embalse');
+        Schema::dropIfExists('embalses');
     }
 };

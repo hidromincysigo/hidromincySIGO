@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_toma_rio');
+        Schema::dropIfExists('toma_rio');
     }
 };

@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
-use OwenIt\Auditing\Contracts\Auditable;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * Class PozoProfundo
@@ -22,13 +23,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $deleted_at
  * @property $created_at
  * @property $updated_at
- *
  * @property Acueducto $acueducto
  * @property Estado $estado
  * @property Municipio $municipio
  * @property Parroquia $parroquia
  * @property UbicacionGeografica $ubicacionGeografica
- * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class PozoProfundo extends Model implements Auditable
@@ -36,17 +35,17 @@ class PozoProfundo extends Model implements Auditable
     use SoftDeletes;
     use \OwenIt\Auditing\Auditable;
 
-    static $rules = [
-		'nombre' => 'required',
-		'estado' => 'required',
-		'municipio' => 'required',
-		'parroquia' => 'required',
-		'sector' => 'required',
-		'coordenadas' => 'required',
-		'acueducto' => 'required',
-		'proposito' => 'required',
-		'propietario' => 'required',
-		'caudal_diseno' => 'required',
+    public static $rules = [
+        'nombre' => 'required',
+        'estado' => 'required',
+        'municipio' => 'required',
+        'parroquia' => 'required',
+        'sector' => 'required',
+        'coordenadas' => 'required',
+        'acueducto' => 'required',
+        'proposito' => 'required',
+        'propietario' => 'required',
+        'caudal_diseno' => 'required',
     ];
 
     protected $perPage = 20;
@@ -56,10 +55,10 @@ class PozoProfundo extends Model implements Auditable
      *
      * @var array
      */
-  //  protected $fillable = ['nombre','estado','municipio','parroquia','sector','coordenadas','acueducto','proposito','propietario','caudal_diseno'];
+    //  protected $fillable = ['nombre','estado','municipio','parroquia','sector','coordenadas','acueducto','proposito','propietario','caudal_diseno'];
 
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    protected $guarded =['id','created_at','updated_at' ];
     protected $dates = ['deleted_at'];
 
     /**
@@ -121,6 +120,4 @@ class PozoProfundo extends Model implements Auditable
         return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'id_coordenadas');
 // >>>>>>> 393e7f628c8fb60e7fd24cbd9bd2626c9bb8aba8
     }
-
-
 }

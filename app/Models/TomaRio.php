@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
-use OwenIt\Auditing\Contracts\Auditable;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * Class TomaRio
@@ -18,12 +19,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $deleted_at
  * @property $created_at
  * @property $updated_at
- *
  * @property Estado $estado
  * @property Municipio $municipio
  * @property Parroquia $parroquia
  * @property UbicacionGeografica $ubicacionGeografica
- * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class TomaRio extends Model implements Auditable
@@ -31,13 +30,13 @@ class TomaRio extends Model implements Auditable
     use SoftDeletes;
     use \OwenIt\Auditing\Auditable;
 
-    static $rules = [
-		'nombre' => 'required',
-		'estado' => 'required',
-		'municipio' => 'required',
-		'parroquia' => 'required',
-		'sector' => 'required',
-		'coordenadas' => 'required',
+    public static $rules = [
+        'nombre' => 'required',
+        'estado' => 'required',
+        'municipio' => 'required',
+        'parroquia' => 'required',
+        'sector' => 'required',
+        'coordenadas' => 'required',
     ];
 
     protected $perPage = 20;
@@ -47,8 +46,7 @@ class TomaRio extends Model implements Auditable
      *
      * @var array
      */
-    protected $fillable = ['nombre','estado','municipio','parroquia','sector','coordenadas'];
-
+    protected $fillable = ['nombre', 'estado', 'municipio', 'parroquia', 'sector', 'coordenadas'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -93,6 +91,4 @@ class TomaRio extends Model implements Auditable
     {
         return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'id_coordenadas');
     }
-    
-
 }

@@ -228,12 +228,12 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
+            'type' => 'navbar-search',
+            'text' => 'search',
             'topnav_right' => false,
         ],
         [
-            'type'         => 'fullscreen-widget',
+            'type' => 'fullscreen-widget',
             'topnav_right' => false,
         ],
 
@@ -244,22 +244,22 @@ return [
         ],
 
         [
-            'text'        => 'PANEL ADMINISTRATIVO',
-            'url'         => 'home',
-            'icon'        => ' fa-fw fas fa-table',
+            'text' => 'PANEL ADMINISTRATIVO',
+            'url' => 'home',
+            'icon' => ' fa-fw fas fa-table',
 
         ],
         ['header' => 'Seguridad'],
         [
             'text' => 'Control de Usuarios',
-            'url'  => 'usuarios',
-            'can'  => 'ver-users',
+            'url' => 'usuarios',
+            'can' => 'ver-users',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Roles & Permisos',
-            'url'  => 'roles',
-            'can'  => 'crear-roles',
+            'url' => 'roles',
+            'can' => 'crear-roles',
             'icon' => 'fas fa-fw fa-lock',
         ],
 

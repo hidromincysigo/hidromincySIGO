@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
-use OwenIt\Auditing\Contracts\Auditable;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * Class Sistema
@@ -14,16 +15,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $created_at
  * @property $updated_at
  *
- * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Sistema extends Model implements Auditable
 {
-  use SoftDeletes;
-  use \OwenIt\Auditing\Auditable;
+    use SoftDeletes;
+    use \OwenIt\Auditing\Auditable;
 
-    static $rules = [
-		'sistemas' => 'required',
+    public static $rules = [
+        'sistemas' => 'required',
     ];
 
     protected $perPage = 20;
@@ -33,10 +33,6 @@ class Sistema extends Model implements Auditable
      *
      * @var array
      */
-
-    protected $table = "sistemas";
+    protected $table = 'sistemas';
     //protected $fillable = ['sistemas'];
-
-
-
 }

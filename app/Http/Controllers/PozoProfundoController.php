@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 
 /**
  * Class PozoProfundoController
- * @package App\Http\Controllers
  */
 class PozoProfundoController extends Controller
 {
@@ -19,13 +18,12 @@ class PozoProfundoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    function __construct()
+    public function __construct()
     {
-         $this->middleware('permission:ver-pozoprofundo|crear-pozoprofundo|editar-pozoprofundo|borrar-pozoprofundo', ['only' => ['index']]);
-         $this->middleware('permission:crear-pozoprofundo', ['only' => ['create','store']]);
-         $this->middleware('permission:editar-pozoprofundo', ['only' => ['edit','update']]);
-         $this->middleware('permission:borrar-pozoprofundo', ['only' => ['destroy']]);
+        $this->middleware('permission:ver-pozoprofundo|crear-pozoprofundo|editar-pozoprofundo|borrar-pozoprofundo', ['only' => ['index']]);
+        $this->middleware('permission:crear-pozoprofundo', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editar-pozoprofundo', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:borrar-pozoprofundo', ['only' => ['destroy']]);
     }
 
     public function index()
@@ -52,7 +50,7 @@ class PozoProfundoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -68,7 +66,7 @@ class PozoProfundoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -81,7 +79,7 @@ class PozoProfundoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -94,8 +92,8 @@ class PozoProfundoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  PozoProfundo $pozoProfundo
+     * @param  \Illuminate\Http\Request  $request
+     * @param  PozoProfundo  $pozoProfundo
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, PozoProfundo $pozoProfundo)
@@ -109,8 +107,9 @@ class PozoProfundoController extends Controller
     }
 
     /**
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
+     *
      * @throws \Exception
      */
     public function destroy($id)
