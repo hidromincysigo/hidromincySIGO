@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fabricante;
+use App\Models\Plantas;
 use Illuminate\Http\Request;
 
-class FabricanteController extends Controller
+class PlantasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class FabricanteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Fabricante  $fabricante
+     * @param  \App\Models\Plantas  $plantas
      * @return \Illuminate\Http\Response
      */
-    public function show(Fabricante $fabricante)
+    public function show(Plantas $plantas)
     {
         //
     }
@@ -52,10 +52,10 @@ class FabricanteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Fabricante  $fabricante
+     * @param  \App\Models\Plantas  $plantas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fabricante $fabricante)
+    public function edit(Plantas $plantas)
     {
         //
     }
@@ -64,10 +64,10 @@ class FabricanteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Fabricante  $fabricante
+     * @param  \App\Models\Plantas  $plantas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fabricante $fabricante)
+    public function update(Request $request, Plantas $plantas)
     {
         //
     }
@@ -75,10 +75,10 @@ class FabricanteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Fabricante  $fabricante
+     * @param  \App\Models\Plantas  $plantas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fabricante $fabricante)
+    public function destroy(Plantas $plantas)
     {
         //
     }
