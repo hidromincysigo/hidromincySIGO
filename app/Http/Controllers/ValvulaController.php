@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Estado;
+use App\Models\Valvula;
 use Illuminate\Http\Request;
 
 /**
- * Class EstadoController
+ * Class ValvulaController
  */
-class EstadoController extends Controller
+class ValvulaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,10 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        $estados = Estado::paginate();
+        $valvulas = Valvula::paginate();
 
-        return view('estado.index', compact('estados'))
-            ->with('i', (request()->input('page', 1) - 1) * $estados->perPage());
+        return view('valvula.index', compact('valvulas'))
+            ->with('i', (request()->input('page', 1) - 1) * $valvulas->perPage());
     }
 
     /**
@@ -30,9 +30,9 @@ class EstadoController extends Controller
      */
     public function create()
     {
-        $estado = new Estado();
+        $valvula = new Valvula();
 
-        return view('estado.create', compact('estado'));
+        return view('valvula.create', compact('valvula'));
     }
 
     /**
@@ -43,12 +43,12 @@ class EstadoController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Estado::$rules);
+        request()->validate(Valvula::$rules);
 
-        $estado = Estado::create($request->all());
+        $valvula = Valvula::create($request->all());
 
-        return redirect()->route('estados.index')
-            ->with('success', 'Estado created successfully.');
+        return redirect()->route('valvulas.index')
+            ->with('success', 'Valvula created successfully.');
     }
 
     /**
@@ -59,9 +59,9 @@ class EstadoController extends Controller
      */
     public function show($id)
     {
-        $estado = Estado::find($id);
+        $valvula = Valvula::find($id);
 
-        return view('estado.show', compact('estado'));
+        return view('valvula.show', compact('valvula'));
     }
 
     /**
@@ -72,26 +72,26 @@ class EstadoController extends Controller
      */
     public function edit($id)
     {
-        $estado = Estado::find($id);
+        $valvula = Valvula::find($id);
 
-        return view('estado.edit', compact('estado'));
+        return view('valvula.edit', compact('valvula'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  Estado  $estado
+     * @param  Valvula  $valvula
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Estado $estado)
+    public function update(Request $request, Valvula $valvula)
     {
-        request()->validate(Estado::$rules);
+        request()->validate(Valvula::$rules);
 
-        $estado->update($request->all());
+        $valvula->update($request->all());
 
-        return redirect()->route('estados.index')
-            ->with('success', 'Estado updated successfully');
+        return redirect()->route('valvulas.index')
+            ->with('success', 'Valvula updated successfully');
     }
 
     /**
@@ -102,9 +102,9 @@ class EstadoController extends Controller
      */
     public function destroy($id)
     {
-        $estado = Estado::find($id)->delete();
+        $valvula = Valvula::find($id)->delete();
 
-        return redirect()->route('estados.index')
-            ->with('success', 'Estado deleted successfully');
+        return redirect()->route('valvulas.index')
+            ->with('success', 'Valvula deleted successfully');
     }
 }

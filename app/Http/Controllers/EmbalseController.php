@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 /**
  * Class EmbalseController
- * @package App\Http\Controllers
  */
 class EmbalseController extends Controller
 {
@@ -16,14 +15,14 @@ class EmbalseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    function __construct()
+    public function __construct()
     {
-         $this->middleware('permission:ver-embalses|crear-embalses|editar-embalses|borrar-embalses', ['only' => ['index']]);
-         $this->middleware('permission:crear-embalses', ['only' => ['create','store']]);
-         $this->middleware('permission:editar-embalses', ['only' => ['edit','update']]);
-         $this->middleware('permission:borrar-embalses', ['only' => ['destroy']]);
+        $this->middleware('permission:ver-embalses|crear-embalses|editar-embalses|borrar-embalses', ['only' => ['index']]);
+        $this->middleware('permission:crear-embalses', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editar-embalses', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:borrar-embalses', ['only' => ['destroy']]);
     }
+
     public function index()
     {
         $embalses = Embalse::paginate();
@@ -40,13 +39,14 @@ class EmbalseController extends Controller
     public function create()
     {
         $embalse = new Embalse();
+
         return view('embalse.create', compact('embalse'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -62,7 +62,7 @@ class EmbalseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -75,7 +75,7 @@ class EmbalseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -88,8 +88,8 @@ class EmbalseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Embalse $embalse
+     * @param  \Illuminate\Http\Request  $request
+     * @param  Embalse  $embalse
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Embalse $embalse)
@@ -103,8 +103,9 @@ class EmbalseController extends Controller
     }
 
     /**
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
+     *
      * @throws \Exception
      */
     public function destroy($id)

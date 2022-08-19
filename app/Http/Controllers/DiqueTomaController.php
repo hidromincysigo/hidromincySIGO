@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 /**
  * Class DiqueTomaController
- * @package App\Http\Controllers
  */
 class DiqueTomaController extends Controller
 {
@@ -16,13 +15,12 @@ class DiqueTomaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    function __construct()
+    public function __construct()
     {
-         $this->middleware('permission:ver-diquetoma|crear-diquetoma|editar-diquetoma|borrar-diquetoma', ['only' => ['index']]);
-         $this->middleware('permission:crear-diquetoma', ['only' => ['create','store']]);
-         $this->middleware('permission:editar-diquetoma', ['only' => ['edit','update']]);
-         $this->middleware('permission:borrar-diquetoma', ['only' => ['destroy']]);
+        $this->middleware('permission:ver-diquetoma|crear-diquetoma|editar-diquetoma|borrar-diquetoma', ['only' => ['index']]);
+        $this->middleware('permission:crear-diquetoma', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editar-diquetoma', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:borrar-diquetoma', ['only' => ['destroy']]);
     }
 
     public function index()
@@ -41,13 +39,14 @@ class DiqueTomaController extends Controller
     public function create()
     {
         $diqueToma = new DiqueToma();
+
         return view('dique-toma.create', compact('diqueToma'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -63,7 +62,7 @@ class DiqueTomaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -76,7 +75,7 @@ class DiqueTomaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -89,8 +88,8 @@ class DiqueTomaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  DiqueToma $diqueToma
+     * @param  \Illuminate\Http\Request  $request
+     * @param  DiqueToma  $diqueToma
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, DiqueToma $diqueToma)
@@ -104,8 +103,9 @@ class DiqueTomaController extends Controller
     }
 
     /**
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
+     *
      * @throws \Exception
      */
     public function destroy($id)

@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
-use OwenIt\Auditing\Contracts\Auditable;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * Class DiqueToma
@@ -20,32 +21,29 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $caudal_diseño
  * @property $caudal_recibe
  * @property $estatus
- *
  * @property Acueducto $acueducto
  * @property Estado $estado
  * @property Municipio $municipio
  * @property Parroquia $parroquia
- * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class DiqueToma extends Model implements Auditable
 {
-
     use  SoftDeletes;
     use \OwenIt\Auditing\Auditable;
-    
-    static $rules = [
-		'estado' => 'required',
-		'parroquia' => 'required',
-		'municipio' => 'required',
-		'ref_sector' => 'required',
-		'utm_a' => 'required',
-		'utm_b' => 'required',
-		'acueducto' => 'required',
-		'toma_rio' => 'required',
-		'caudal_diseño' => 'required',
-		'caudal_recibe' => 'required',
-		'estatus' => 'required',
+
+    public static $rules = [
+        'estado' => 'required',
+        'parroquia' => 'required',
+        'municipio' => 'required',
+        'ref_sector' => 'required',
+        'utm_a' => 'required',
+        'utm_b' => 'required',
+        'acueducto' => 'required',
+        'toma_rio' => 'required',
+        'caudal_diseño' => 'required',
+        'caudal_recibe' => 'required',
+        'estatus' => 'required',
     ];
 
     protected $perPage = 20;
@@ -55,8 +53,7 @@ class DiqueToma extends Model implements Auditable
      *
      * @var array
      */
-    protected $fillable = ['estado','parroquia','municipio','ref_sector','utm_a','utm_b','acueducto','toma_rio','caudal_diseño','caudal_recibe','estatus'];
-
+    protected $fillable = ['estado', 'parroquia', 'municipio', 'ref_sector', 'utm_a', 'utm_b', 'acueducto', 'toma_rio', 'caudal_diseño', 'caudal_recibe', 'estatus'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -65,7 +62,7 @@ class DiqueToma extends Model implements Auditable
     {
         return $this->belongsTo(Acueducto::class, 'id_acueducto');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -73,7 +70,7 @@ class DiqueToma extends Model implements Auditable
     {
         return $this->belongsTo(Estado::class, 'id_estado');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -81,7 +78,7 @@ class DiqueToma extends Model implements Auditable
     {
         return $this->belongsTo(Municipio::class, 'id_municipio');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -89,6 +86,4 @@ class DiqueToma extends Model implements Auditable
     {
         return $this->belongsTo(Parroquia::class, 'id_parroquia');
     }
-    
-
 }

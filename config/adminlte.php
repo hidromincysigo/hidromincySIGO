@@ -228,12 +228,12 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
+            'type' => 'navbar-search',
+            'text' => 'search',
             'topnav_right' => false,
         ],
         [
-            'type'         => 'fullscreen-widget',
+            'type' => 'fullscreen-widget',
             'topnav_right' => false,
         ],
 
@@ -244,37 +244,37 @@ return [
         ],
 
         [
-            'text'        => 'PANEL ADMINISTRATIVO',
-            'url'         => 'home',
-            'icon'        => ' fa-fw fas fa-table',
+            'text' => 'PANEL ADMINISTRATIVO',
+            'url' => 'home',
+            'icon' => ' fa-fw fas fa-table',
 
         ],
         ['header' => 'Seguridad'],
         [
             'text' => 'Control de Usuarios',
-            'url'  => 'usuarios',
-            'can'  => 'ver-users',
+            'url' => 'usuarios',
+            'can' => 'ver-users',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Roles & Permisos',
-            'url'  => 'roles',
-            'can'  => 'crear-roles',
+            'url' => 'roles',
+            'can' => 'crear-roles',
             'icon' => 'fas fa-fw fa-lock',
         ],
 
         [
             'text' => 'Auditoria de Eventos',
-            'url'  => 'auditar',
+            'url' => 'auditar',
             'icon' => 'fa-fw fas fa-file',                    ],
         ['header' => 'SISTEMA PRINCIPAL'],
         [
-            'text'    => 'REGISTRO',
-            'icon'    => 'fas fa-fw fa-share',
+            'text' => 'REGISTRO',
+            'icon' => 'fas fa-fw fa-share',
             'submenu' => [
 
                 [
-                    'text'    => 'Procesos Hidricos',
+                    'text' => 'Procesos Hidricos',
 
                     'submenu' => [
                         [
@@ -283,39 +283,39 @@ return [
                             'submenu' => [
                                 [
                                     'text' => 'Embalses',
-                                    'url'  => 'embalses',
-                                    'can'  => 'ver-embalses',
+                                    'url' => 'embalses',
+                                    'can' => 'ver-embalses',
                                 ],
                                 [
                                     'text' => 'Dique Toma',
-                                    'url'  => 'diquetoma',
-                                    'can'  => 'ver-diquetoma',
+                                    'url' => 'diquetoma',
+                                    'can' => 'ver-diquetoma',
 
                                 ],
                                 [
                                     'text' => 'Toma Rio',
-                                    'url'  => 'tomarios',
-                                    'can'  => 'ver-tomarios',
+                                    'url' => 'tomarios',
+                                    'can' => 'ver-tomarios',
                                 ],
                                 [
                                     'text' => 'Pozo Profundo',
-                                    'url'  => 'pozoprofundos',
-                                    'can'  => 'ver-pozoprofundo',
+                                    'url' => 'pozoprofundos',
+                                    'can' => 'ver-pozoprofundo',
                                 ],
                             ],
                         ],
                         [
-                            'text'    => 'level_two',
-                            'can' =>'prueba',
-                            'url'     => '#',
+                            'text' => 'level_two',
+                            'can' => 'prueba',
+                            'url' => '#',
                             'submenu' => [
                                 [
                                     'text' => 'level_three',
-                                    'url'  => '#',
+                                    'url' => '#',
                                 ],
                                 [
                                     'text' => 'level_three',
-                                    'url'  => '#',
+                                    'url' => '#',
                                 ],
                             ],
                         ],
@@ -323,26 +323,26 @@ return [
                 ],
 
                 [
-                    'text'    => 'DIAGRAMA ESCADA',
-                    'url'     => '#',
-                           'can' =>'prueba',
+                    'text' => 'DIAGRAMA ESCADA',
+                    'url' => '#',
+                    'can' => 'prueba',
                     'submenu' => [
                         [
                             'text' => 'level_two',
-                            'url'  => '#',
+                            'url' => '#',
 
                         ],
                         [
-                            'text'    => 'level_two',
-                            'url'     => '#',
+                            'text' => 'level_two',
+                            'url' => '#',
                             'submenu' => [
                                 [
                                     'text' => 'level_three',
-                                    'url'  => '#',
+                                    'url' => '#',
                                 ],
                                 [
                                     'text' => 'level_three',
-                                    'url'  => '#',
+                                    'url' => '#',
                                 ],
                             ],
                         ],
@@ -350,25 +350,25 @@ return [
                 ],
 
                 [
-                    'text'    => 'SOLUCIONES HÍDRICAS',
-                    'url'     => '#',
-                           'can' =>'prueba',
+                    'text' => 'SOLUCIONES HÍDRICAS',
+                    'url' => '#',
+                    'can' => 'prueba',
                     'submenu' => [
                         [
                             'text' => 'level_two',
-                            'url'  => '#',
+                            'url' => '#',
                         ],
                         [
-                            'text'    => 'level_two',
-                            'url'     => '#',
+                            'text' => 'level_two',
+                            'url' => '#',
                             'submenu' => [
                                 [
                                     'text' => 'level_three',
-                                    'url'  => '#',
+                                    'url' => '#',
                                 ],
                                 [
                                     'text' => 'level_three',
-                                    'url'  => '#',
+                                    'url' => '#',
                                 ],
                             ],
                         ],

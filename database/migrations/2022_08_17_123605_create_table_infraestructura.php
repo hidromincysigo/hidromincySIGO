@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('proposito')->comment('proposito');
             $table->string('img');
             $table->unsignedBigInteger('id_estado');
-            $table->unsignedBigInteger('id_municipio');  
+            $table->unsignedBigInteger('id_municipio');
             $table->unsignedBigInteger('id_parroquia');
-            $table->string('utm_a'); 
+            $table->string('utm_a');
             $table->string('utm_b');
             $table->string('desc_ubicacion');
             $table->unsignedBigInteger('poblacion_servida');

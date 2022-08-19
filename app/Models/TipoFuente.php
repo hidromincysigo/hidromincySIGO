@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
-use OwenIt\Auditing\Contracts\Auditable;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * Class TipoFuente
@@ -13,18 +14,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $deleted_at
  * @property $created_at
  * @property $updated_at
- *
  * @property Captacion[] $captacions
- * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class TipoFuente extends Model implements Auditable
 {
-  use SoftDeletes;
-  use \OwenIt\Auditing\Auditable;
+    use SoftDeletes;
+    use \OwenIt\Auditing\Auditable;
 
-    static $rules = [
-		'tipo' => 'required',
+    public static $rules = [
+        'tipo' => 'required',
     ];
 
     protected $perPage = 20;
@@ -34,9 +33,8 @@ class TipoFuente extends Model implements Auditable
      *
      * @var array
      */
-    protected $table = "tipo_fuentes";
-   // protected $fillable = ['tipo'];
-
+    protected $table = 'tipo_fuentes';
+    // protected $fillable = ['tipo'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -45,6 +43,4 @@ class TipoFuente extends Model implements Auditable
     {
         return $this->hasMany('App\Models\Captacion', 'tipo_fuente', 'id');
     }
-    
-
 }

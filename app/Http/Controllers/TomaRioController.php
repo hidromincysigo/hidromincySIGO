@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 /**
  * Class TomaRioController
- * @package App\Http\Controllers
  */
 class TomaRioController extends Controller
 {
@@ -16,13 +15,12 @@ class TomaRioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    function __construct()
+    public function __construct()
     {
-         $this->middleware('permission:ver-tomaRios|crear-tomaRios|editar-tomaRios|borrar-tomaRios', ['only' => ['index']]);
-         $this->middleware('permission:crear-tomaRios', ['only' => ['create','store']]);
-         $this->middleware('permission:editar-tomaRios', ['only' => ['edit','update']]);
-         $this->middleware('permission:borrar-tomaRios', ['only' => ['destroy']]);
+        $this->middleware('permission:ver-tomaRios|crear-tomaRios|editar-tomaRios|borrar-tomaRios', ['only' => ['index']]);
+        $this->middleware('permission:crear-tomaRios', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editar-tomaRios', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:borrar-tomaRios', ['only' => ['destroy']]);
     }
 
     public function index()
@@ -41,13 +39,14 @@ class TomaRioController extends Controller
     public function create()
     {
         $tomaRio = new TomaRio();
+
         return view('toma-rio.create', compact('tomaRio'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -63,7 +62,7 @@ class TomaRioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -76,7 +75,7 @@ class TomaRioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -89,8 +88,8 @@ class TomaRioController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  TomaRio $tomaRio
+     * @param  \Illuminate\Http\Request  $request
+     * @param  TomaRio  $tomaRio
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, TomaRio $tomaRio)
@@ -104,8 +103,9 @@ class TomaRioController extends Controller
     }
 
     /**
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
+     *
      * @throws \Exception
      */
     public function destroy($id)

@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 /**
  * Class TipoFuenteController
- * @package App\Http\Controllers
  */
 class TipoFuenteController extends Controller
 {
@@ -16,11 +15,11 @@ class TipoFuenteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    function __construct()
+    public function __construct()
     {
         $this->middleware('permission:ver-tipofuente|crear-tipofuente|editar-tipofuente|borrar-tipofuente', ['only' => ['index']]);
-        $this->middleware('permission:crear-tipofuente', ['only' => ['create','store']]);
-        $this->middleware('permission:editar-tipofuente', ['only' => ['edit','update']]);
+        $this->middleware('permission:crear-tipofuente', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editar-tipofuente', ['only' => ['edit', 'update']]);
         $this->middleware('permission:borrar-tipofuente', ['only' => ['destroy']]);
     }
 
@@ -40,13 +39,14 @@ class TipoFuenteController extends Controller
     public function create()
     {
         $tipoFuente = new TipoFuente();
+
         return view('tipo-fuente.create', compact('tipoFuente'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -62,7 +62,7 @@ class TipoFuenteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -75,7 +75,7 @@ class TipoFuenteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -88,8 +88,8 @@ class TipoFuenteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  TipoFuente $tipoFuente
+     * @param  \Illuminate\Http\Request  $request
+     * @param  TipoFuente  $tipoFuente
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, TipoFuente $tipoFuente)
@@ -103,8 +103,9 @@ class TipoFuenteController extends Controller
     }
 
     /**
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
+     *
      * @throws \Exception
      */
     public function destroy($id)

@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_sistema');
             $table->unsignedBigInteger('id_acueducto');
             $table->unsignedBigInteger('id_estado');
-            $table->unsignedBigInteger('id_municipio');  
-            $table->unsignedBigInteger('id_parroquia'); 
+            $table->unsignedBigInteger('id_municipio');
+            $table->unsignedBigInteger('id_parroquia');
             $table->unsignedBigInteger('id_coordenadas')->comment('coordenadas');
             $table->foreign('id_tipo_planta')->references('id')->on('tipo_planta');
             $table->foreign('id_sistema')->references('id')->on('sistemas');
