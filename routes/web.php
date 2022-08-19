@@ -10,7 +10,12 @@ use App\Http\Controllers\CaptacionController;
 use App\Http\Controllers\EmbalseController;
 use App\Http\Controllers\DiqueTomaController;
 use App\Http\Controllers\PozoProfundoController;
+use App\Http\Controllers\CicloController;
+use App\Http\Controllers\AbastecimientoController;
+use App\Http\Controllers\OrganizacionesController;
+use App\Http\Controllers\AveriasController;
 use App\Http\Controllers\TomaRioController;
+use App\Http\Controllers\PlantasController;
 use App\Http\Controllers\DireccionController;
 
 /*
@@ -49,8 +54,13 @@ Route::group(['middleware' => ['auth']], function() {
 Route::resource('captacion', CaptacionController::class);
 Route::resource('acueducto', AcueductoController::class);
 Route::resource('embalses', EmbalseController::class);
+Route::resource('plantas', PlantasController::class);
 Route::resource('diquetoma', DiqueTomaController::class);
 Route::resource('tomarios', TomaRioController::class);
+Route::resource('ciclos', CicloController::class);
+Route::resource('averias', AveriasController::class);
+Route::resource('organizaciones', OrganizacionesController::class);
+Route::resource('abastecimiento', AbastecimientoController::class);
 Route::resource('pozoprofundos', PozoProfundoController::class);
 
 Route::post('/llenarMunicipios',[DireccionController::class, 'llenarMunicipios']);

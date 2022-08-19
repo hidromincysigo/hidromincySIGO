@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('captacion', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tipo_fuente');
-            $table->unsignedBigInteger('fuente');
-            $table->unsignedBigInteger('acueducto');
+            $table->unsignedBigInteger('id_tipo_fuente');
+            $table->unsignedBigInteger('id_fuente');
+            $table->unsignedBigInteger('id_acueducto');
             $table->unsignedDecimal('cuota');
             $table->unsignedDecimal('extraccion');
             $table->string('observacion');
-            $table->foreign('tipo_fuente')->references('id')->on('tipo_fuentes');
-            $table->foreign('acueducto')->references('id')->on('acueductos');
+            $table->foreign('id_tipo_fuente')->references('id')->on('tipo_fuentes');
+            $table->foreign('id_acueducto')->references('id')->on('acueductos');
             $table->softDeletes();
             $table->timestamps();
         });

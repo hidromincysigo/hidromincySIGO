@@ -16,15 +16,15 @@ return new class extends Migration
         Schema::create('toma_rio', function (Blueprint $table) {
             $table->id();
             $table->string('nombre')->comment('nombre toma rio');
-            $table->unsignedBigInteger('estado');
-            $table->unsignedBigInteger('municipio');
-            $table->unsignedBigInteger('parroquia');
+            $table->unsignedBigInteger('id_estado');
+            $table->unsignedBigInteger('id_municipio');
+            $table->unsignedBigInteger('id_parroquia');
             $table->string('sector')->comment('Por definir');
-            $table->unsignedBigInteger('coordenadas')->comment('coordenadas');
-            $table->foreign('coordenadas')->references('id')->on('ubicacion_geografica');
-            $table->foreign('estado')->references('id')->on('estados');
-            $table->foreign('municipio')->references('id')->on('municipios');
-            $table->foreign('parroquia')->references('id')->on('parroquias');
+            $table->unsignedBigInteger('id_coordenadas')->comment('coordenadas');
+            $table->foreign('id_coordenadas')->references('id')->on('ubicacion_geografica');
+            $table->foreign('id_estado')->references('id')->on('estados');
+            $table->foreign('id_municipio')->references('id')->on('municipios');
+            $table->foreign('id_parroquia')->references('id')->on('parroquias');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -55,7 +55,11 @@ class TomaRio extends Model implements Auditable
      */
     public function estado()
     {
-        return $this->hasOne('App\Models\Estado', 'estado');
+// <<<<<<< HEAD
+//         return $this->hasOne('App\Models\Estado', 'estado');
+// =======
+        return $this->hasOne('App\Models\Estado', 'id', 'id_estado');
+// >>>>>>> 393e7f628c8fb60e7fd24cbd9bd2626c9bb8aba8
     }
 
     /**
@@ -63,7 +67,11 @@ class TomaRio extends Model implements Auditable
      */
     public function municipio()
     {
-        return $this->hasOne('App\Models\Municipio', 'municipio');
+// <<<<<<< HEAD
+//         return $this->hasOne('App\Models\Municipio', 'municipio');
+// =======
+        return $this->hasOne('App\Models\Municipio', 'id', 'id_municipio');
+// >>>>>>> 393e7f628c8fb60e7fd24cbd9bd2626c9bb8aba8
     }
 
     /**
@@ -71,7 +79,11 @@ class TomaRio extends Model implements Auditable
      */
     public function parroquia()
     {
-        return $this->hasOne('App\Models\Parroquia', 'parroquia');
+// <<<<<<< HEAD
+//         return $this->hasOne('App\Models\Parroquia', 'parroquia');
+// =======
+        return $this->hasOne('App\Models\Parroquia', 'id', 'id_parroquia');
+// >>>>>>> 393e7f628c8fb60e7fd24cbd9bd2626c9bb8aba8
     }
 
     /**
@@ -79,7 +91,7 @@ class TomaRio extends Model implements Auditable
      */
     public function ubicacionGeografica()
     {
-        return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'coordenadas');
+        return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'id_coordenadas');
     }
     
 

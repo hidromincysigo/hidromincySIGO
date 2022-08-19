@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('reg')->comment('por descubrir');
             $table->string('nombre')->comment('nombre pozo profundo');
-            $table->unsignedBigInteger('estado');
-            $table->unsignedBigInteger('municipio');  
-            $table->unsignedBigInteger('parroquia'); 
+            $table->unsignedBigInteger('id_estado');
+            $table->unsignedBigInteger('id_municipio');  
+            $table->unsignedBigInteger('id_parroquia'); 
             $table->string('desc_ubicacion')->comment('Por definir');
             $table->string('utm_a'); 
             $table->string('utm_b');
@@ -27,9 +27,9 @@ return new class extends Migration
             $table->string('propietario')->comment('propietario');
             $table->string('constructora')->comment('constructora');
             $table->string('cronologia')->comment('cronologia');
-            $table->foreign('estado')->references('id')->on('estados');
-            $table->foreign('municipio')->references('id')->on('municipios');
-            $table->foreign('parroquia')->references('id')->on('parroquias');
+            $table->foreign('id_estado')->references('id')->on('estados');
+            $table->foreign('id_municipio')->references('id')->on('municipios');
+            $table->foreign('id_parroquia')->references('id')->on('parroquias');
             $table->softDeletes();
             $table->timestamps();
         });

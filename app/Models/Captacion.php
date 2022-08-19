@@ -30,7 +30,7 @@ class Captacion extends Model implements Auditable
 
     public function acueducto()
     { 
-        return $this->hasOne(Acueducto::class, 'id', 'acueducto');
+        return $this->hasOne(Acueducto::class, 'id', 'id_acueducto');
        // return $this->hasOne('App\Models\Acueducto', 'id', 'acueducto');
 
 
@@ -38,7 +38,7 @@ class Captacion extends Model implements Auditable
 
     public function tipoFuente()
     {
-        return $this->hasOne(TipoFuente::class, 'id', 'tipo_fuente');
+        return $this->hasOne(TipoFuente::class, 'id', 'id_tipo_fuente');
        // return $this->hasOne('App\Models\TipoFuente', 'id', 'tipo_fuente');
     }
     

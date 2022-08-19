@@ -24,15 +24,15 @@
                         </div>
                         <div class="form-group">
                             <strong>Nombre:</strong>
-                            {{ $diqueToma->estadoDatos->estado }}
+                            {{ $diqueToma->estado->estado }}
                         </div>
                         <div class="form-group">
                             <strong>Municipio:</strong>
-                            {{ $diqueToma->municipioDatos->municipio }}
+                            {{ $diqueToma->municipio->municipio }}
                         </div>
                         <div class="form-group">
                             <strong>Parroquia:</strong>
-                            {{ $diqueToma->parroquiaDatos->parroquia }}
+                            {{ $diqueToma->parroquia->parroquia }}
                         </div>
                         <div class="form-group">
                             <strong>Ref Sector:</strong>
@@ -46,10 +46,10 @@
                             <strong>Utm B:</strong>
                             {{ $diqueToma->utm_b }}
                         </div>
-                        {{-- <div class="form-group">
+                        <div class="form-group">
                             <strong>Acueducto:</strong>
-                            {{ $diqueToma->acueductoDatos->nombre }}
-                        </div> --}}
+                            {{ $diqueToma->acueducto->nombre }}
+                        </div>
                         <div class="form-group">
                             <strong>Toma Rio:</strong>
                             {{ $diqueToma->toma_rio }}

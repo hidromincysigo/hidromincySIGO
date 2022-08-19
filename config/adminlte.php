@@ -315,6 +315,10 @@ return [
                                 'text'    => 'potabilización',
                                 'submenu' => [
                                     [
+                                        'text' => 'Plantas',
+                                        'url'  => 'plantas',
+                                    ],
+                                    [
                                         'text' => 'Plantas de Filtración',
                                         'url'  => '#',
                                     ],
@@ -373,11 +377,11 @@ return [
                                 'submenu' => [
                                     [
                                         'text' => 'Ciclo Distribución',
-                                        'url'  => '#',
+                                        'url'  => 'ciclos',
                                     ],
                                     [
                                         'text' => 'Plan de Abastecimiento',
-                                        'url'  => '#',
+                                        'url'  => 'abastecimiento',
                                     ],
                                 ],
                             ],
@@ -391,7 +395,7 @@ return [
                                 'submenu' => [
                                     [
                                         'text' => 'Organizaciones Populares',
-                                        'url'  => '#',
+                                        'url'  => 'organizaciones',
                                     ],
                                 ],
                             ],
@@ -423,14 +427,14 @@ return [
                             ],
                             [
                                 'text' => 'Averías',
-                                'url'  => '#',
+                                'url'  => 'averias',
                             ],
                             [
                                 'text' => 'Comerciales',
                                 'submenu' => [
                                     [
                                         'text' => 'Registrar Tipo de Suscripción',
-                                        'url'  => '#',
+                                        'url'  => 'averias',
                                     ],
                                     [
                                         'text' => 'Registrar Suscriptores',

@@ -25,7 +25,7 @@ class Acueducto extends Model implements Auditable
      *
      * @var array
      */
-    protected $table = "acueducto";
+    protected $table = "acueductos";
      //protected $fillable = ['nombre','estado','capacidad_distribucion','capacidad_modificada'];
 
 
@@ -35,7 +35,7 @@ class Acueducto extends Model implements Auditable
     public function estado()
     {
 
-        return $this->hasMany('Estado', 'id', 'estado');
+        return $this->hasMany('Estado', 'id', 'id_estado');
         //return $this->belongsTo('App\Models\Estado', 'id', 'estado');
     }
     
