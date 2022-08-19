@@ -19,8 +19,6 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             VenezuelaTableSeeder::class,
             AcueductosTableSeeder::class,
-            DiqueTomaSeeder::class,
-            EmbalseTableSeeder::class,
             TipoFuentesTableSeeder::class,
         ]);
     }

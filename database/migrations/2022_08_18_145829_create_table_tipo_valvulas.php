@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_tipo_valvulas');
+        Schema::dropIfExists('tipo_valvulas');
     }
 };

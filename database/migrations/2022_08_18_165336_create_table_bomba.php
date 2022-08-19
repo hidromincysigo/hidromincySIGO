@@ -13,17 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('valvulas', function (Blueprint $table) {
+        Schema::create('bombas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedDecimal('diametro');
-            $table->unsignedDecimal('presion_nominal');
-            $table->unsignedBigInteger('id_tipo_valvula');
-            $table->string('accionamiento')->comment('accionamiento');
-            $table->unsignedDecimal('fc');
+            $table->unsignedBigInteger('grupo');
+            $table->unsignedBigInteger('nro_etapas');
+            $table->string('rotacion')->comment('rotacion');
+            $table->unsignedDecimal('caudal');
+            $table->unsignedDecimal('presion');
+            $table->unsignedDecimal('rpm');
+            $table->unsignedDecimal('peso');
+            $table->unsignedDecimal('diametro_succion');
+            $table->unsignedDecimal('diametro_descarga');
+            $table->string('tipo_sello')->comment('tipo de sello');
+            $table->tinyInteger('operatividad');
             $table->unsignedBigInteger('id_estacion_bombeo');
             $table->unsignedBigInteger('id_fabricante');
-            $table->tinyInteger('operatividad');
-            $table->foreign('id_tipo_valvula')->references('id')->on('tipo_valvulas');
             $table->foreign('id_estacion_bombeo')->references('id')->on('estacion_bombeo');
             $table->foreign('id_fabricante')->references('id')->on('fabricante');
             $table->softDeletes();
@@ -38,6 +42,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('valvulas');
+        Schema::dropIfExists('bombas');
     }
 };

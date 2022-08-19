@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_infraestructura', function (Blueprint $table) {
+        Schema::create('table_tipo_manifold', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_infraestructura')->comment('tipos de infraestructura');
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_infraestructura');
+        Schema::dropIfExists('table_tipo_manifold');
     }
 };

@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_tipo_captacion');
+        Schema::dropIfExists('tipo_fuentes');
     }
 };

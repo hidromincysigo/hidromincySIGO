@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_municipio');
             $table->unsignedBigInteger('id_parroquia');
             $table->string('desc_ubicacion')->comment('Por definir');
-            $table->string('utm_a');
-            $table->string('utm_b');
+            $table->unsignedBigInteger('id_coordenadas')->comment('coordenadas');
+            $table->foreign('id_coordenadas')->references('id')->on('ubicacion_geografica');
             $table->unsignedBigInteger('id_acueducto');
             $table->string('proposito')->comment('proposito de uso');
             $table->string('propietario')->comment('propietario');
@@ -43,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_pozo_profundos');
+        Schema::dropIfExists('pozo_profundos');
     }
 };
