@@ -12,7 +12,7 @@
                     {{-- {{dd($embalse)}} --}}
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">MOSTRAR {{ $embalse->nombre }}</span>
+                            <h3 class="card-title" style="color: white;">MOSTRAR {{ $embalse->nombre }}</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('embalses.index') }}"> Volver</a>

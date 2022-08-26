@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Valvula;
+use App\Models\TipoValvula;
+use App\Models\EstacionBombeo;
+use App\Models\Fabricante;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +35,10 @@ class ValvulaController extends Controller
     public function create()
     {
         $valvula = new Valvula();
-        return view('valvula.create', compact('valvula'));
+        $tipo = TipoValvula::get()->all();
+        $estacion = EstacionBombeo::get()->all();
+        $fabricante = Fabricante::get()->all();
+        return view('valvula.create', compact('valvula', 'tipo', 'estacion', 'fabricante'));
     }
 
     /**

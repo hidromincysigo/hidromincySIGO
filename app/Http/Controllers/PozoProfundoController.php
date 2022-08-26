@@ -6,6 +6,11 @@ use App\Models\PozoProfundo;
 use App\Models\Estado;
 use App\Models\Municipio;
 use App\Models\Parroquia;
+use App\Models\Acueducto;
+use App\Models\Sistema;
+use App\Models\Infraestructura;
+use App\Models\TipoInfraestructura;
+use App\Models\UbicacionGeografica;
 use Illuminate\Http\Request;
 
 /**
@@ -42,9 +47,14 @@ class PozoProfundoController extends Controller
     public function create()
     {
         $pozoProfundo = new PozoProfundo();
+        $infraestructura = new Infraestructura();
+        $ubicacionGeografica = new UbicacionGeografica();
         $estados = Estado::get()->all();
+        $tipoin = TipoInfraestructura::get()->all();
+        $sistemas = Sistema::get()->all();
+        $acueducto = Acueducto::get()->all();
 
-        return view('pozo-profundo.create',['pozoProfundo' => $pozoProfundo, 'estados' => $estados]);
+        return view('pozo-profundo.create',compact('pozoProfundo', 'infraestructura', 'estados','ubicacionGeografica','tipoin','sistemas','acueducto'));
     }
 
     /**

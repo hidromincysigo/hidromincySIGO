@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Detalles Tecnicos Estacion Bombeo</span>
+                            <h3 class="card-title" style="color: white;">Show Detalles Tecnicos Estacion Bombeo</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('detalles-tecnicos-estacion-bombeos.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('detalles_tecnicos.index') }}"> Back</a>
                         </div>
                     </div>
 

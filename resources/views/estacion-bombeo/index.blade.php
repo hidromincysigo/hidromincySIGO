@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('estacion-bombeos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('estacion_bombeo.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -40,12 +40,7 @@
 										<th>Cantidad Grupos</th>
 										<th>Id Tipo Estacion Bombeo</th>
 										<th>Id Tipo Servicio</th>
-										<th>Id Sistema</th>
-										<th>Id Acueducto</th>
-										<th>Id Estado</th>
-										<th>Id Municipio</th>
-										<th>Id Parroquia</th>
-										<th>Id Coordenadas</th>
+										<th>Id Infraestructura</th>
 
                                         <th></th>
                                     </tr>
@@ -59,12 +54,7 @@
 											<td>{{ $estacionBombeo->cantidad_grupos }}</td>
 											<td>{{ $estacionBombeo->id_tipo_estacion_bombeo }}</td>
 											<td>{{ $estacionBombeo->id_tipo_servicio }}</td>
-											<td>{{ $estacionBombeo->id_sistema }}</td>
-											<td>{{ $estacionBombeo->id_acueducto }}</td>
-											<td>{{ $estacionBombeo->id_estado }}</td>
-											<td>{{ $estacionBombeo->id_municipio }}</td>
-											<td>{{ $estacionBombeo->id_parroquia }}</td>
-											<td>{{ $estacionBombeo->id_coordenadas }}</td>
+											<td>{{ $estacionBombeo->id_infraestructura }}</td>
 
                                             <td>
                                                 <form action="{{ route('estacion-bombeos.destroy',$estacionBombeo->id) }}" method="POST">

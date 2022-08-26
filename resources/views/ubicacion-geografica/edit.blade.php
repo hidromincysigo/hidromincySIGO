@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Ubicacion Geografica</span>
+                        <h3 class="card-title" style="color: white;">Update Ubicacion Geografica</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('ubicacion-geograficas.update', $ubicacionGeografica->id) }}"  role="form" enctype="multipart/form-data">

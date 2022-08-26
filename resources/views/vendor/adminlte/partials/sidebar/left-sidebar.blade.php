@@ -1,4 +1,13 @@
-<aside class="main-sidebar {{ config('adminlte.classes_sidebar', 'sidebar-dark-primary elevation-4') }}">
+<aside class="main-sidebar {{ config('adminlte.classes_sidebar', 'sidebar-dark-primary elevation-4') }}" style="background: #666666;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#666666, #000033, #000099);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#666666, #000033, #000099);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#666666, #000033, #000099);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#666666, #000033, #000099);
+    /* Standard syntax */;">
 
     {{-- Sidebar brand logo --}}
     @if(config('adminlte.logo_img_xl'))

@@ -9,17 +9,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class UbicacionGeografica
  *
  * @property $id
- * @property $coordenadas
+ * @property $coordenadas_utm_a
+ * @property $coordenadas_utm_b
  * @property $deleted_at
  * @property $created_at
  * @property $updated_at
  *
- * @property DiqueToma[] $diqueTomas
- * @property Embalse[] $embalses
- * @property EstacionBombeo[] $estacionBombeos
- * @property Planta[] $plantas
- * @property PozoProfundo[] $pozoProfundos
- * @property TomaRio[] $tomaRios
+ * @property Infraestructura[] $infraestructuras
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -28,7 +24,8 @@ class UbicacionGeografica extends Model
     use SoftDeletes;
 
     static $rules = [
-		'coordenadas' => 'required',
+		'coordenadas_utm_a' => 'required',
+		'coordenadas_utm_b' => 'required',
     ];
 
     protected $perPage = 20;
@@ -38,55 +35,15 @@ class UbicacionGeografica extends Model
      *
      * @var array
      */
-    protected $fillable = ['coordenadas'];
+    protected $fillable = ['coordenadas_utm_a','coordenadas_utm_b'];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function diqueTomas()
+    public function infraestructuras()
     {
-        return $this->hasMany('App\Models\DiqueToma', 'id_coordenadas', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function embalses()
-    {
-        return $this->hasMany('App\Models\Embalse', 'id_coordenadas', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function estacionBombeos()
-    {
-        return $this->hasMany('App\Models\EstacionBombeo', 'id_coordenadas', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function plantas()
-    {
-        return $this->hasMany('App\Models\Planta', 'id_coordenadas', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function pozoProfundos()
-    {
-        return $this->hasMany('App\Models\PozoProfundo', 'id_coordenadas', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function tomaRios()
-    {
-        return $this->hasMany('App\Models\TomaRio', 'id_coordenadas', 'id');
+        return $this->hasMany('App\Models\Infraestructura', 'id_coordenadas', 'id');
     }
     
 

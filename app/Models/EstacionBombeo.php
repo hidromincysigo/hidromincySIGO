@@ -13,26 +13,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $cantidad_grupos
  * @property $id_tipo_estacion_bombeo
  * @property $id_tipo_servicio
- * @property $id_sistema
- * @property $id_acueducto
- * @property $id_estado
- * @property $id_municipio
- * @property $id_parroquia
- * @property $id_coordenadas
+ * @property $id_infraestructura
  * @property $deleted_at
  * @property $created_at
  * @property $updated_at
  *
- * @property Acueducto $acueducto
  * @property Bomba[] $bombas
  * @property DetallesTecnicosEstacionBombeo[] $detallesTecnicosEstacionBombeos
- * @property Estado $estado
- * @property Municipio $municipio
- * @property Parroquia $parroquia
- * @property Sistema $sistema
+ * @property Infraestructura $infraestructura
+ * @property Manifold[] $manifolds
  * @property TipoEstacionBombeo $tipoEstacionBombeo
  * @property TipoServicioEstacionBombeo $tipoServicioEstacionBombeo
- * @property UbicacionGeografica $ubicacionGeografica
  * @property Valvula[] $valvulas
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -46,32 +37,20 @@ class EstacionBombeo extends Model
 		'cantidad_grupos' => 'required',
 		'id_tipo_estacion_bombeo' => 'required',
 		'id_tipo_servicio' => 'required',
-		'id_sistema' => 'required',
-		'id_acueducto' => 'required',
-		'id_estado' => 'required',
-		'id_municipio' => 'required',
-		'id_parroquia' => 'required',
-		'id_coordenadas' => 'required',
+		'id_infraestructura' => 'required',
     ];
 
     protected $perPage = 20;
+    protected $table = 'estacion_bombeo';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['nombre','cantidad_grupos','id_tipo_estacion_bombeo','id_tipo_servicio','id_sistema','id_acueducto','id_estado','id_municipio','id_parroquia','id_coordenadas'];
+    protected $fillable = ['nombre','cantidad_grupos','id_tipo_estacion_bombeo','id_tipo_servicio','id_infraestructura'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function acueducto()
-    {
-        return $this->hasOne('App\Models\Acueducto', 'id', 'id_acueducto');
-    }
-    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -91,33 +70,17 @@ class EstacionBombeo extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function estado()
+    public function infraestructura()
     {
-        return $this->hasOne('App\Models\Estado', 'id', 'id_estado');
+        return $this->hasOne('App\Models\Infraestructura', 'id', 'id_infraestructura');
     }
     
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function municipio()
+    public function manifolds()
     {
-        return $this->hasOne('App\Models\Municipio', 'id', 'id_municipio');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function parroquia()
-    {
-        return $this->hasOne('App\Models\Parroquia', 'id', 'id_parroquia');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function sistema()
-    {
-        return $this->hasOne('App\Models\Sistema', 'id', 'id_sistema');
+        return $this->hasMany('App\Models\Manifold', 'id_estacion_bombeo', 'id');
     }
     
     /**
@@ -134,14 +97,6 @@ class EstacionBombeo extends Model
     public function tipoServicioEstacionBombeo()
     {
         return $this->hasOne('App\Models\TipoServicioEstacionBombeo', 'id', 'id_tipo_servicio');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function ubicacionGeografica()
-    {
-        return $this->hasOne('App\Models\UbicacionGeografica', 'id', 'id_coordenadas');
     }
     
     /**

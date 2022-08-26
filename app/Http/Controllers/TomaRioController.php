@@ -6,6 +6,11 @@ use App\Models\TomaRio;
 use App\Models\Estado;
 use App\Models\Municipio;
 use App\Models\Parroquia;
+use App\Models\Acueducto;
+use App\Models\Sistema;
+use App\Models\Infraestructura;
+use App\Models\TipoInfraestructura;
+use App\Models\UbicacionGeografica;
 use Illuminate\Http\Request;
 
 /**
@@ -30,7 +35,7 @@ class TomaRioController extends Controller
     {
         $tomaRios = TomaRio::paginate();
 
-        return view('toma-rio.index', compact('tomaRios'))
+        return view('toma_rio.index', compact('tomaRios'))
             ->with('i', (request()->input('page', 1) - 1) * $tomaRios->perPage());
     }
 
@@ -42,9 +47,13 @@ class TomaRioController extends Controller
     public function create()
     {
         $tomaRio = new TomaRio();
-
+        $infraestructura = new Infraestructura();
+        $ubicacionGeografica = new UbicacionGeografica();
         $estados = Estado::get()->all();
-        return view('toma-rio.create', ['estados' => $estados, 'tomaRio' => $tomaRio]);
+        $tipoin = TipoInfraestructura::get()->all();
+        $sistemas = Sistema::get()->all();
+        $acueducto = Acueducto::get()->all();
+        return view('toma_rio.create', compact('tomaRio', 'infraestructura', 'estados','ubicacionGeografica','tipoin','sistemas','acueducto'));
     }
 
     /**
@@ -59,7 +68,7 @@ class TomaRioController extends Controller
 
         $tomaRio = TomaRio::create($request->all());
 
-        return redirect()->route('toma-rios.index')
+        return redirect()->route('toma_rios.index')
             ->with('success', 'TomaRio created successfully.');
     }
 
@@ -73,7 +82,7 @@ class TomaRioController extends Controller
     {
         $tomaRio = TomaRio::find($id);
 
-        return view('toma-rio.show', compact('tomaRio'));
+        return view('toma_rio.show', compact('tomaRio'));
     }
 
     /**
@@ -86,7 +95,7 @@ class TomaRioController extends Controller
     {
         $tomaRio = TomaRio::find($id);
 
-        return view('toma-rio.edit', compact('tomaRio'));
+        return view('toma_rio.edit', compact('tomaRio'));
     }
 
     /**
@@ -102,7 +111,7 @@ class TomaRioController extends Controller
 
         $tomaRio->update($request->all());
 
-        return redirect()->route('toma-rios.index')
+        return redirect()->route('toma_rios.index')
             ->with('success', 'TomaRio updated successfully');
     }
 
@@ -116,7 +125,7 @@ class TomaRioController extends Controller
     {
         $tomaRio = TomaRio::find($id)->delete();
 
-        return redirect()->route('toma-rios.index')
+        return redirect()->route('toma_rios.index')
             ->with('success', 'TomaRio deleted successfully');
     }
 }

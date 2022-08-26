@@ -19,11 +19,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property Captacion[] $captacions
  * @property DiqueToma[] $diqueTomas
- * @property EstacionBombeo[] $estacionBombeos
  * @property Estado $estado
  * @property Infraestructura[] $infraestructuras
- * @property Planta[] $plantas
- * @property PozoProfundo[] $pozoProfundos
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -61,15 +58,7 @@ class Acueducto extends Model
      */
     public function diqueTomas()
     {
-        return $this->hasMany('App\Models\DiqueToma', 'id_acueducto', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function estacionBombeos()
-    {
-        return $this->hasMany('App\Models\EstacionBombeo', 'id_acueducto', 'id');
+        return $this->hasMany('App\Models\DiqueToma', 'acueducto', 'id');
     }
     
     /**
@@ -86,22 +75,6 @@ class Acueducto extends Model
     public function infraestructuras()
     {
         return $this->hasMany('App\Models\Infraestructura', 'id_acueducto', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function plantas()
-    {
-        return $this->hasMany('App\Models\Planta', 'id_acueducto', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function pozoProfundos()
-    {
-        return $this->hasMany('App\Models\PozoProfundo', 'id_acueducto', 'id');
     }
     
 

@@ -12,11 +12,11 @@
                 @includeif('partials.errors')
 
                 <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Update Pozo Profundo</span>
+                    <div class="card-header col-12" style="background-color: #000066;">
+                        <h3 class="card-title" style="color: white;">Update Pozo Profundo</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('pozo-profundos.update', $pozoProfundo->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('pozo_profundos.update', $pozoProfundo->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

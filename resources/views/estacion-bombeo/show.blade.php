@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Estacion Bombeo</span>
+                            <h3 class="card-title" style="color: white;">Show Estacion Bombeo</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('estacion-bombeos.index') }}"> Back</a>
@@ -37,28 +37,8 @@
                             {{ $estacionBombeo->id_tipo_servicio }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Sistema:</strong>
-                            {{ $estacionBombeo->id_sistema }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Acueducto:</strong>
-                            {{ $estacionBombeo->id_acueducto }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Estado:</strong>
-                            {{ $estacionBombeo->id_estado }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Municipio:</strong>
-                            {{ $estacionBombeo->id_municipio }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Parroquia:</strong>
-                            {{ $estacionBombeo->id_parroquia }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Coordenadas:</strong>
-                            {{ $estacionBombeo->id_coordenadas }}
+                            <strong>Id Infraestructura:</strong>
+                            {{ $estacionBombeo->id_infraestructura }}
                         </div>
 
                     </div>

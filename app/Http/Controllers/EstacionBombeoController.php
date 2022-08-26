@@ -3,6 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\EstacionBombeo;
+use App\Models\Estado;
+use App\Models\Municipio;
+use App\Models\Parroquia;
+use App\Models\Acueducto;
+use App\Models\Sistema;
+use App\Models\Infraestructura;
+use App\Models\TipoInfraestructura;
+use App\Models\UbicacionGeografica;
+use App\Models\TipoEstacionBombeo;
+use App\Models\TipoServicioEstacionBombeo;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +42,15 @@ class EstacionBombeoController extends Controller
     public function create()
     {
         $estacionBombeo = new EstacionBombeo();
-        return view('estacion-bombeo.create', compact('estacionBombeo'));
+        $infraestructura = new Infraestructura();
+        $ubicacionGeografica = new UbicacionGeografica();
+        $estados = Estado::get()->all();
+        $tipoin = TipoInfraestructura::get()->all();
+        $sistemas = Sistema::get()->all();
+        $acueducto = Acueducto::get()->all();
+        $tipoestacion = TipoEstacionBombeo::get()->all();
+        $tiposervicio = TipoServicioEstacionBombeo::get()->all();
+        return view('estacion-bombeo.create', compact('estacionBombeo', 'infraestructura', 'estados','ubicacionGeografica','tipoin','sistemas','acueducto', 'tipoestacion', 'tiposervicio'));
     }
 
     /**

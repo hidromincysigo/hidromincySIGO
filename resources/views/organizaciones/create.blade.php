@@ -11,8 +11,8 @@ Crear Organización Popular
         @includeif('partials.errors')
 
         <div class="card card-default">
-            <div class="card-header">
-                <span class="card-title">Crear Organización Popular</span>
+            <div class="card-header col-12" style="background-color: #000066;">
+                <h3 class="card-title" style="color: white;">Crear Organización Popular</span>
             </div>
             <div class="card-body">
                 <form method="POST" action="{{-- {{ route('diquetoma.store') }} --}}" role="form" enctype="multipart/form-data">

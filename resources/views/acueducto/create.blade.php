@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Acueducto</span>
+                        <h3 class="card-title" style="color: white;">Create Acueducto</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('acueductos.store') }}"  role="form" enctype="multipart/form-data">

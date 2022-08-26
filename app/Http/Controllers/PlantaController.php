@@ -3,6 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Planta;
+use App\Models\Estado;
+use App\Models\Municipio;
+use App\Models\Parroquia;
+use App\Models\Acueducto;
+use App\Models\Sistema;
+use App\Models\TipoPlanta;
+use App\Models\Infraestructura;
+use App\Models\TipoInfraestructura;
+use App\Models\UbicacionGeografica;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +41,14 @@ class PlantaController extends Controller
     public function create()
     {
         $planta = new Planta();
-        return view('planta.create', compact('planta'));
+        $infraestructura = new Infraestructura();
+        $ubicacionGeografica = new UbicacionGeografica();
+        $tipoplanta = TipoPlanta::get()->all();
+        $estados = Estado::get()->all();
+        $tipoin = TipoInfraestructura::get()->all();
+        $sistemas = Sistema::get()->all();
+        $acueducto = Acueducto::get()->all();
+        return view('planta.create', compact('planta', 'infraestructura', 'estados','ubicacionGeografica','tipoin','sistemas','acueducto', 'tipoplanta'));
     }
 
     /**

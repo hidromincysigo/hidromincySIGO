@@ -12,8 +12,8 @@ Update Dique Toma
             @includeif('partials.errors')
 
             <div class="card card-default">
-                <div class="card-header">
-                    <span class="card-title">Update Dique Toma</span>
+                <div class="card-header col-12" style="background-color: #000066;">
+                    <h3 class="card-title" style="color: white;">Update Dique Toma</span>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('diquetoma.update', $diqueToma->id) }}" role="form" enctype="multipart/form-data">

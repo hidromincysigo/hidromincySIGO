@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Pozo Profundo</span>
+                            <h3 class="card-title" style="color: white;">Show Pozo Profundo</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('pozo-profundos.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('pozo_profundos.index') }}"> Back</a>
                         </div>
                     </div>
 

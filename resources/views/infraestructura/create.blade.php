@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Infraestructura</span>
+                        <h3 class="card-title" style="color: white;">Create Infraestructura</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('infraestructuras.store') }}"  role="form" enctype="multipart/form-data">

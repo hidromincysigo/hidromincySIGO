@@ -6,6 +6,7 @@ use App\Models\DiqueToma;
 use App\Models\Estado;
 use App\Models\Municipio;
 use App\Models\Parroquia;
+use App\Models\Acueducto;
 use DB;
 use Illuminate\Http\Request;
 
@@ -45,7 +46,8 @@ class DiqueTomaController extends Controller
         $diqueToma = new DiqueToma();
 
         $estados = Estado::get()->all();
-        return view('dique-toma.create',['diqueToma' => $diqueToma, 'estados' => $estados]);
+        $acueducto = Acueducto::get()->all();
+        return view('dique-toma.create',compact('diqueToma','estados','acueducto'));
 
     }
 

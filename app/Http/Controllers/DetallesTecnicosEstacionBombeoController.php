@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DetallesTecnicosEstacionBombeo;
+use App\Models\EstacionBombeo;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class DetallesTecnicosEstacionBombeoController extends Controller
     public function create()
     {
         $detallesTecnicosEstacionBombeo = new DetallesTecnicosEstacionBombeo();
-        return view('detalles-tecnicos-estacion-bombeo.create', compact('detallesTecnicosEstacionBombeo'));
+        $estacion = EstacionBombeo::get()->all();
+        return view('detalles-tecnicos-estacion-bombeo.create', compact('detallesTecnicosEstacionBombeo', 'estacion'));
     }
 
     /**

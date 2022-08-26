@@ -36,6 +36,7 @@ class Fabricante extends Model
     ];
 
     protected $perPage = 20;
+    protected $table = 'fabricante';
 
     /**
      * Attributes that should be mass-assignable.

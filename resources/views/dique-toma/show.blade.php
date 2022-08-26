@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">VER {{ $diqueToma->nombre }}</span>
+                            <h3 class="card-title" style="color: white;">VER {{ $diqueToma->nombre }}</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('diquetoma.index') }}"> VOLVER</a>

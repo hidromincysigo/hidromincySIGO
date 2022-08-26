@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * Class Sistema
@@ -15,15 +14,16 @@ use OwenIt\Auditing\Contracts\Auditable;
  * @property $created_at
  * @property $updated_at
  *
+ * @property Infraestructura[] $infraestructuras
+ * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Sistema extends Model implements Auditable
+class Sistema extends Model
 {
     use SoftDeletes;
-    use \OwenIt\Auditing\Auditable;
 
-    public static $rules = [
-        'sistemas' => 'required',
+    static $rules = [
+		'sistemas' => 'required',
     ];
 
     protected $perPage = 20;
@@ -33,6 +33,16 @@ class Sistema extends Model implements Auditable
      *
      * @var array
      */
-    protected $table = 'sistemas';
-    //protected $fillable = ['sistemas'];
+    protected $fillable = ['sistemas'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function infraestructuras()
+    {
+        return $this->hasMany('App\Models\Infraestructura', 'id_sistema', 'id');
+    }
+    
+
 }

@@ -12,8 +12,8 @@
                 @includeif('partials.errors')
 
                 <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Create Valvula</span>
+                    <div class="card-header col-12" style="background-color: #000066;">
+                        <h3 class="card-title" style="color: white;">Create Valvula</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('valvulas.store') }}"  role="form" enctype="multipart/form-data">

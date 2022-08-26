@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Valvula</span>
+                            <h3 class="card-title" style="color: white;">Show Valvula</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('valvulas.index') }}"> Back</a>

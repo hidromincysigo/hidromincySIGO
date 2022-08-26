@@ -32,7 +32,7 @@ Dique Toma
                         </span>
 
                         <div class="float-right">
-                            <a href="{{ route('diquetoma.create') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
+                            <a href="{{ route('dique_toma.create') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
                               {{ __('Create New') }}
                           </a>
                       </div>

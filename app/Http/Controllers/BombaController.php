@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bomba;
+use App\Models\EstacionBombeo;
+use App\Models\Fabricante;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +34,9 @@ class BombaController extends Controller
     public function create()
     {
         $bomba = new Bomba();
-        return view('bomba.create', compact('bomba'));
+        $estacion = EstacionBombeo::get()->all();
+        $fabricante = Fabricante::get()->all();
+        return view('bomba.create', compact('bomba', 'estacion', 'fabricante'));
     }
 
     /**

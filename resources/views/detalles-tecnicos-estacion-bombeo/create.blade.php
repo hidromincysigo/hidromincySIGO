@@ -12,11 +12,11 @@
                 @includeif('partials.errors')
 
                 <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Create Detalles Tecnicos Estacion Bombeo</span>
+                    <div class="card-header col-12" style="background-color: #000066;">
+                        <h3 class="card-title" style="color: white;">Create Detalles Tecnicos Estacion Bombeo</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('detalles-tecnicos-estacion-bombeos.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('detalles_tecnicos.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('detalles-tecnicos-estacion-bombeo.form')
