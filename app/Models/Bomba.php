@@ -52,6 +52,7 @@ class Bomba extends Model
     ];
 
     protected $perPage = 20;
+    protected $table = 'bombas';
 
     /**
      * Attributes that should be mass-assignable.

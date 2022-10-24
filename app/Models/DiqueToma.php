@@ -54,6 +54,7 @@ class DiqueToma extends Model
     ];
 
     protected $perPage = 20;
+    protected $table = 'dique_toma';
 
     /**
      * Attributes that should be mass-assignable.
@@ -76,7 +77,7 @@ class DiqueToma extends Model
      */
     public function estado()
     {
-        return $this->hasOne('App\Models\Estado', 'id', 'estado');
+        return $this->hasOne('App\Models\Estado', 'estado');
     }
     
     /**

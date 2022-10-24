@@ -18,11 +18,15 @@ return new class extends Migration
             $table->unsignedDecimal('diametro');
             $table->unsignedDecimal('presion_nominal');
             $table->unsignedBigInteger('id_tipo_valvula');
-            $table->string('accionamiento')->comment('accionamiento');
+            $table->tinyInteger('accionamiento');
             $table->unsignedDecimal('fc');
             $table->unsignedBigInteger('id_estacion_bombeo');
             $table->unsignedBigInteger('id_fabricante');
             $table->tinyInteger('operatividad');
+            $table->boolean('en_uso');
+
+            $table->foreign('accionamiento')->references('id')->on('tipo_accionamiento_valvula');
+            $table->foreign('operatividad')->references('id')->on('operatividad');
             $table->foreign('id_tipo_valvula')->references('id')->on('tipo_valvulas');
             $table->foreign('id_estacion_bombeo')->references('id')->on('estacion_bombeo');
             $table->foreign('id_fabricante')->references('id')->on('fabricante');

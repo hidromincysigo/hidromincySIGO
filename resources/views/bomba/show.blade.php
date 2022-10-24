@@ -1,78 +1,60 @@
-@extends('layouts.app')
+@extends ('adminlte::page')
 
-@section('template_title')
-    {{ $bomba->name ?? 'Show Bomba' }}
-@endsection
+@section('title', 'Dashboard')
+
 
 @section('content')
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="float-left">
-                            <h3 class="card-title" style="color: white;">Show Bomba</span>
-                        </div>
+                <div class="card-header col-12" style="background-color: #000066;">
+                    <h3 class="card-title" style="color: white;">Ver Bomba</h3>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('bombas.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('bombas.index') }}">Volver</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
-                        <div class="form-group">
-                            <strong>Grupo:</strong>
-                            {{ $bomba->grupo }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Nro Etapas:</strong>
-                            {{ $bomba->nro_etapas }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Rotacion:</strong>
-                            {{ $bomba->rotacion }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Caudal:</strong>
-                            {{ $bomba->caudal }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Presion:</strong>
-                            {{ $bomba->presion }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Rpm:</strong>
-                            {{ $bomba->rpm }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Peso:</strong>
-                            {{ $bomba->peso }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Diametro Succion:</strong>
-                            {{ $bomba->diametro_succion }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Diametro Descarga:</strong>
-                            {{ $bomba->diametro_descarga }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Tipo Sello:</strong>
-                            {{ $bomba->tipo_sello }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Operatividad:</strong>
-                            {{ $bomba->operatividad }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Estacion Bombeo:</strong>
-                            {{ $bomba->id_estacion_bombeo }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Fabricante:</strong>
-                            {{ $bomba->id_fabricante }}
-                        </div>
-
+                        <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Grupo Asignado:</th>
+                        <th>Nº de Etapas:</th>
+                        <th>Rotacion:</th>
+                        <th>Caudal:</th>
+                        <th>Presion:</th>
+                        <th>RPM:</th>
+                        <th>Peso:</th>
+                        <th>Diametro de Succion:</th>
+                        <th>Diametro de Descarga:</th>
+                        <th>Tipo Sello:</th>
+                        <th>Operatividad:</th>
+                        <th>En Uso:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ $bomba->grupo }}</td>
+                        <td>{{ $bomba->nro_etapas }}</td>
+                        <td>{{ $bomba->rotacion }}</td>
+                        <td>{{ $bomba->caudal }}</td>
+                        <td>{{ $bomba->presion }}</td>
+                        <td>{{ $bomba->rpm }}</td>
+                        <td>{{ $bomba->peso }}</td>
+                        <td>{{ $bomba->diametro_succion }}</td>
+                        <td>{{ $bomba->diametro_descarga }}</td>
+                        <td>{{ $bomba->tipo_sello }}</td>
+                        <td>{{ $bomba->operatividad }}</td>
+                        @if($bomba->en_uso === true)
+                        <td>SI</td>
+                        @else
+                        <td>NO</td>
+                        @endif
+                    </tr>
+                </tbody>
+            </table>
                     </div>
                 </div>
             </div>

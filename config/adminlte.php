@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => 'v-1.0',
-    'logo_img' => 'logo/logosigoS.png',
+    'logo' => 'SIGO',
+    'logo_img' => 'img/LogoHidroSigo.png',
     /// se debe solucionar el error de la imagen
     'logo_img_class' => 'brand-image',
     'logo_img_xl' => null,
@@ -266,466 +266,497 @@ return [
         [
             'text' => 'Auditoria de Eventos',
             'url'  => 'auditar',            
-            'icon' => 'fa-fw fas fa-file',                    ],
-            ['header' => 'SISTEMA PRINCIPAL'],
-            [
-                'text'    => 'REGISTRO',
-                'icon'    => 'fas fa-fw fa-share',
-                'submenu' => [
-
-                    [
-                        'text'    => 'Procesos Hidricos',
-                        'submenu' => [
-                            [
-                                'text' => 'Captación',
-
-                                'submenu' => [
-                                    [
-                                        'text' => 'Embalses',
-                                        'can'  => 'ver-embalses',
-                                        'url'  => 'embalses',
-                                    ],
-                                    [
-                                        'text' => 'Dique Toma',
-                                        'can'   =>  'ver-diquetoma',
-                                        'url'  => 'diquetoma',
-                                    ],
-                                    [
-                                        'text' => 'Toma Rio',
-                                        'can'   => 'ver-tomaRios',
-                                        'url'  => 'tomarios',
-                                    ],
-                                    [
-                                        'text' => 'Pozo Profundo',
-                                        'can'   =>  'ver-pozoprofundo',
-                                        'url'  => 'pozoprofundos',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'text'    => 'Aducción',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Estacion de Bombeo',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'text'    => 'potabilización',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Plantas',
-                                        'url'  => 'plantas',
-                                    ],
-                                    [
-                                        'text' => 'Plantas de Filtración',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'Plantas Deszalinizadoras',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'Plantas Potabilizadoras',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'Plantas Portátiles',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'text'    => 'Distribución',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Estacion de Bombeo',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'Ciclo Distribución',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'Plan Abastecimiento',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => '',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'text'    => 'Saneamiento',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Estacion de Bombeo',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'text'    => 'Servicios Complementarios',
-                        'submenu' => [
-                            [
-                                'text' => 'Procesos de Distribución',
-
-                                'submenu' => [
-                                    [
-                                        'text' => 'Ciclo Distribución',
-                                        'url'  => 'ciclos',
-                                    ],
-                                    [
-                                        'text' => 'Plan de Abastecimiento',
-                                        'url'  => 'abastecimiento',
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'text'    => 'Servicios Auxiliares',
-                        'submenu' => [
-                            [
-                                'text'    => 'Servicios Complementarios',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Organizaciones Populares',
-                                        'url'  => 'organizaciones',
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'text'    => 'Otros',
-                        'submenu' => [
-                            [
-                                'text' => 'Almacén',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Registrar Categorías',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'Registrar un Material',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'Órdenes de Entrega',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'Solicitud de Material',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'text' => 'Averías',
-                                'url'  => 'averias',
-                            ],
-                            [
-                                'text' => 'Comerciales',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Registrar Tipo de Suscripción',
-                                        'url'  => 'averias',
-                                    ],
-                                    [
-                                        'text' => 'Registrar Suscriptores',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'text' => 'Flota Vehicular',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Registrar Maquinaria',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'text'    => 'DIAGRAMA ESCADA',
-                'icon'    => 'fa fa-sitemap fa-lg',
-                'submenu' => [
-                    [
-                        'text' => 'Procesos de Aducción',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Procesos de Distribución',
-                        'url'  => '#',
-                    ],
-                ],
-            ],
-            [
-                'text'    => 'SOLUCIONES HÍDRICAS',
-                'icon'    => 'fa fa-cogs fa-lg',
-                'submenu' => [
-                    [
-                        'text' => 'Crear Planes',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Listar Planes',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Añadir Obras a Planes',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Registrar Obras',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Listar Obras',
-                        'url'  => '#',
-                    ],
-                ],
-            ],
-            [
-                'text'    => 'MEDICÓN',
-                'icon'    => 'fa fa-life-ring fa-lg',
-                'submenu' => [
-                    [
-                        'text'    => 'PARÁMETROS',
-                        'icon'    => 'fa fa-calculator fa-lg',
-                        'submenu' => [
-                            [
-                                'text' => 'Embalses',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Dique Toma',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Pozos Profundos',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text'    => 'Estaciones de Bombeo',
-                                'icon'    => 'fa fa-random',
-                                'submenu' => [
-                                    [
-                                        'text' => 'E.B Conducción',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'E.B Distribución',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'E.B Saneamiento',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'text' => 'Plantas Potabilizadoras',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Listar Clientes Comerciales',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Generar Facturación',
-                                'url'  => '#',
-                            ],
-                        ],
-                    ],
-                    [
-                        'text'    => 'Incidencias',
-                        'icon'    => 'fa fa-tasks fa-lg',
-                        'submenu' => [
-                            [
-                                'text' => 'Embalses',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Dique Toma',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Pozos Profundos',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text'    => 'Estaciones de Bombeo',
-                                'icon'    => 'fa fa-random',
-                                'submenu' => [
-                                    [
-                                        'text' => 'E.B Conducción',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'E.B Distribución',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'E.B Saneamiento',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'text' => 'Plantas Potabilizadoras',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Afectaciones Eléctricas',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Flota Vehicular',
-                                'url'  => '#',
-                            ],
-                        ],
-                    ],
-                    [
-                        'text'    => 'Actualizaciones',
-                        'icon'    => 'fa fa-spinner fa-lg',
-                        'submenu' => [
-                            [
-                                'text' => 'Plan Cisterna',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Cierre de Averías',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Plan de Abastecimiento',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Seguimiento Plan Abas.',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text'    => 'Fortalecimiento P.P',
-                                'icon'    => 'fa fa-table',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Organizaciones Populares',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'BRIPPAS',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'text'    => 'Comerciales',
-                                'icon'    => 'fa fa-table',
-                                'submenu' => [
-                                    [
-                                        'text' => 'Listado Suscriptores',
-                                        'url'  => '#',
-                                    ],
-                                    [
-                                        'text' => 'Actualizar Cobranza',
-                                        'url'  => '#',
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'text'    => 'SEGUIMIENTO Y CONTROL',
-                'icon'    => 'fa fa-space-shuttle',
-                'submenu' => [
-                    [
-                        'text' => 'Plan Operativo (P.O.A)',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Alcances',
-                        'url'  => '#',
-                    ],
-                ],
-            ],
-            [
-                'text'    => 'REPORTES',
-                'icon'    => 'fa fa-th-large',
-                'submenu' => [
-                    [
-                        'text' => 'Histórico Indicadores',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Histórico Incidencias',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Ubicaciones Geográficas',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Sala Situacional',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Reporte Carga PPT',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text' => 'Comerciales',
-                        'url'  => '#',
-                    ],
-                    [
-                        'text'    => 'Plan Abastecimiento',
-                        'icon'    => 'fa fa-th-large',
-                        'submenu' => [
-                            [
-                                'text' => 'Sectores',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Estatus de Entrega',
-                                'url'  => '#',
-                            ],
-                        ],
-                    ],
-                    [
-                        'text'    => 'Almacen',
-                        'icon'    => 'fa fa-th-large',
-                        'submenu' => [
-                            [
-                                'text' => 'Materiales',
-                                'url'  => '#',
-                            ],
-                            [
-                                'text' => 'Ordenes de Entrega',
-                                'url'  => '#',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'text' => 'OPCIONES DEL SISTEMA',
-                'icon'    => 'fa fa-cog',
-                'url'  => '#',
-            ],
-
+            'icon' => 'fa-fw fas fa-file',                    
         ],
+        ['header' => 'SISTEMA PRINCIPAL'],
+        [
+            'text'    => 'REGISTRO',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'EDIFICACION',
+                    'icon'    => 'fa fa-map',
+                    'can'  => '',
+                    'url'  => 'infraestructura',
+                ],
+                [
+                    'text' => 'EQUIPOS',
+                    'icon'    => 'fa fa-random',
+                    'can'  => '',
+                    'url'  => 'equipos',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Infraestructura',
+            'icon'    => 'fa fa-cubes',
+            'submenu' => [
+                [
+                    'text' => 'Estacion de Bombeo',
+                    'icon'    => 'fa fa-life-ring',
+                    'can'  => '',
+                    'url'  => 'grupos',
+                ],
+            ],
+        ],
+        [
+            'text'  => 'Mantenimeinto',
+            'icon'  =>  'fa fa-cubes',
+            'can'   => '',
+            'url'   =>  'mantenimiento',
+        ],
+    ],
+
+
+//                     [
+
+//                         'icon'    => 'fa fa-random',
+//                         //'url'  => 'estacion_bombeo',
+//                         'submenu' => [
+//                     [
+//                         'text' => 'Bombas',
+//                         'url'  => 'bombas',
+//                     ],
+//                     [
+//                         'text' => 'Detalles Técnicos',
+//                         'url'  => 'detalles_tecnicos',
+//                     ],
+//                     [
+//                         'text' => 'Manifold',
+//                         'url'  => 'manifold',
+//                     ],
+//                     [
+//                         'text' => 'Motores',
+//                         'url'  => 'motores',
+//                     ],
+//                     [
+//                         'text' => 'Tableros',
+//                         'url'  => 'tableros',
+//                     ],
+//                     [
+//                         'text' => 'Tuberias',
+//                         'url'  => 'tuberias',
+//                     ],
+//                     [
+//                         'text' => 'Valvulas',
+//                         'url'  => 'valvulas',
+//                     ],
+//                 ],
+//             ],
+//         ],
+//     ],
+// ],
+    //         [
+    //             'text'    => 'Procesos Hidricos',
+    //             'submenu' => [
+    //                 [
+    //                     'text' => 'Captación',
+    //                     'icon' => 'fa fa-life-ring',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'Embalses',
+    //                             'can'  => 'ver-embalses',
+    //                             'url'  => 'embalses',
+    //                         ],
+    //                         [
+    //                             'text' => 'Dique Toma',
+    //                             'can'   =>  'ver-diquetoma',
+    //                             'url'  => 'dique_toma',
+    //                         ],
+    //                         [
+    //                             'text' => 'Toma Rio',
+    //                             'can'   => 'ver-tomaRios',
+    //                             'url'  => 'toma_rio',
+    //                         ],
+    //                         [
+    //                             'text' => 'Pozo Profundo',
+    //                             'can'   =>  'ver-pozoprofundo',
+    //                             'url'  => 'pozo_profundos',
+    //                         ],
+    //                     ],
+    //                 ],
+    //             ],
+    //                 [
+    //                     'text'    => 'potabilización',
+    //                     'icon'    => 'fa fa-shower',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'Plantas',
+    //                             'url'  => 'plantas',
+    //                         ],
+    //                         [
+    //                             'text' => 'Plantas de Filtración',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'Plantas Deszalinizadoras',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'Plantas Potabilizadoras',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'Plantas Portátiles',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //                 [
+    //                     'text'    => 'Distribución',
+    //                     'icon'    => 'fa fa-arrows-alt',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'Ciclo Distribución',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'Plan Abastecimiento',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //             ],
+    //         ],
+    //         [
+    //             'text'    => 'Servicios Auxiliares',
+    //             'submenu' => [
+    //                 [
+    //                     'text'    => 'Servicios Complementarios',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'Organizaciones Populares',
+    //                             'url'  => 'organizaciones',
+    //                         ],
+    //                     ],
+    //                 ],
+    //             ],
+    //         ],
+    //         [
+    //             'text'    => 'Otros',
+    //             'submenu' => [
+    //                 [
+    //                     'text' => 'Almacén',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'Registrar Categorías',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'Registrar un Material',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'Órdenes de Entrega',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'Solicitud de Material',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //                 [
+    //                     'text' => 'Averías',
+    //                     'url'  => 'averias',
+    //                 ],
+    //                 [
+    //                     'text' => 'Comerciales',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'Registrar Tipo de Suscripción',
+    //                             'url'  => 'averias',
+    //                         ],
+    //                         [
+    //                             'text' => 'Registrar Suscriptores',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //                 [
+    //                     'text' => 'Flota Vehicular',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'Registrar Maquinaria',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //             ],
+    //         ],
+    //     ],
+    // ],
+    // [
+    //     'text'    => 'DIAGRAMA ESCADA',
+    //     'icon'    => 'fa fa-sitemap fa-lg',
+    //     'submenu' => [
+    //         [
+    //             'text' => 'Procesos de Aducción',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Procesos de Distribución',
+    //             'url'  => '#',
+    //         ],
+    //     ],
+    // ],
+    // [
+    //     'text'    => 'SOLUCIONES HÍDRICAS',
+    //     'icon'    => 'fa fa-cogs fa-lg',
+    //     'submenu' => [
+    //         [
+    //             'text' => 'Crear Planes',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Listar Planes',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Añadir Obras a Planes',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Registrar Obras',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Listar Obras',
+    //             'url'  => '#',
+    //         ],
+    //     ],
+    // ],
+    // [
+    //     'text'    => 'MEDICÓN',
+    //     'icon'    => 'fa fa-life-ring fa-lg',
+    //     'submenu' => [
+    //         [
+    //             'text'    => 'PARÁMETROS',
+    //             'icon'    => 'fa fa-calculator fa-lg',
+    //             'submenu' => [
+    //                 [
+    //                     'text' => 'Embalses',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Dique Toma',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Pozos Profundos',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text'    => 'Estaciones de Bombeo',
+    //                     'icon'    => 'fa fa-random',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'E.B Conducción',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'E.B Distribución',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'E.B Saneamiento',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //                 [
+    //                     'text' => 'Plantas Potabilizadoras',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Listar Clientes Comerciales',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Generar Facturación',
+    //                     'url'  => '#',
+    //                 ],
+    //             ],
+    //         ],
+    //         [
+    //             'text'    => 'Incidencias',
+    //             'icon'    => 'fa fa-tasks fa-lg',
+    //             'submenu' => [
+    //                 [
+    //                     'text' => 'Embalses',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Dique Toma',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Pozos Profundos',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text'    => 'Estaciones de Bombeo',
+    //                     'icon'    => 'fa fa-random',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'E.B Conducción',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'E.B Distribución',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'E.B Saneamiento',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //                 [
+    //                     'text' => 'Plantas Potabilizadoras',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Afectaciones Eléctricas',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Flota Vehicular',
+    //                     'url'  => '#',
+    //                 ],
+    //             ],
+    //         ],
+    //         [
+    //             'text'    => 'Actualizaciones',
+    //             'icon'    => 'fa fa-spinner fa-lg',
+    //             'submenu' => [
+    //                 [
+    //                     'text' => 'Plan Cisterna',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Cierre de Averías',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Plan de Abastecimiento',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Seguimiento Plan Abas.',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text'    => 'Fortalecimiento P.P',
+    //                     'icon'    => 'fa fa-table',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'Organizaciones Populares',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'BRIPPAS',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //                 [
+    //                     'text'    => 'Comerciales',
+    //                     'icon'    => 'fa fa-table',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'Listado Suscriptores',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'Actualizar Cobranza',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //             ],
+    //         ],
+    //     ],
+    // ],
+    // [
+    //     'text'    => 'SEGUIMIENTO Y CONTROL',
+    //     'icon'    => 'fa fa-space-shuttle',
+    //     'submenu' => [
+    //         [
+    //             'text' => 'Plan Operativo (P.O.A)',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Alcances',
+    //             'url'  => '#',
+    //         ],
+    //     ],
+    // ],
+    // [
+    //     'text'    => 'REPORTES',
+    //     'icon'    => 'fa fa-th-large',
+    //     'submenu' => [
+    //         [
+    //             'text' => 'Histórico Indicadores',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Histórico Incidencias',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Ubicaciones Geográficas',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Sala Situacional',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Reporte Carga PPT',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text' => 'Comerciales',
+    //             'url'  => '#',
+    //         ],
+    //         [
+    //             'text'    => 'Plan Abastecimiento',
+    //             'icon'    => 'fa fa-th-large',
+    //             'submenu' => [
+    //                 [
+    //                     'text' => 'Sectores',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Estatus de Entrega',
+    //                     'url'  => '#',
+    //                 ],
+    //             ],
+    //         ],
+    //         [
+    //             'text'    => 'Almacen',
+    //             'icon'    => 'fa fa-th-large',
+    //             'submenu' => [
+    //                 [
+    //                     'text' => 'Materiales',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text' => 'Ordenes de Entrega',
+    //                     'url'  => '#',
+    //                 ],
+    //             ],
+    //         ],
+    //     ],
+    // ],
+    [
+        'text' => 'OPCIONES DEL SISTEMA',
+        'icon'    => 'fa fa-cog',
+        'url'  => '#',
+    ],
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -763,7 +794,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -783,7 +814,7 @@ return [
             ],
         ],
         'Select2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -798,7 +829,7 @@ return [
             ],
         ],
         'Chartjs' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -808,7 +839,7 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

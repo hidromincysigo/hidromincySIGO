@@ -1,8 +1,7 @@
-@extends('layouts.app')
+@extends ('adminlte::page')
 
-@section('template_title')
-    Update Manifold
-@endsection
+@section('title', 'Dashboard')
+
 
 @section('content')
     <section class="content container-fluid">

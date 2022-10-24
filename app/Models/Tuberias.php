@@ -28,9 +28,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $created_at
  * @property $updated_at
  *
- * @property EstacionBombeo $estacionBombeo
  * @property Fabricante $fabricante
+ * @property Infraestructura $infraestructura
  * @property Manifold $manifold
+ * @property Operatividad $operatividad
  * @property TipoMaterial $tipoMaterial
  * @property TipoTuberium $tipoTuberium
  * @package App
@@ -71,17 +72,17 @@ class Tuberias extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function estacionBombeo()
+    public function fabricante()
     {
-        return $this->hasOne('App\Models\EstacionBombeo', 'id', 'id_estacion_bombeo');
+        return $this->hasOne('App\Models\Fabricante','id_fabricante');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function fabricante()
+    public function infraestructura()
     {
-        return $this->hasOne('App\Models\Fabricante', 'id', 'id_fabricante');
+        return $this->hasOne('App\Models\Infraestructura','id_estacion_bombeo');
     }
     
     /**
@@ -89,7 +90,15 @@ class Tuberias extends Model
      */
     public function manifold()
     {
-        return $this->hasOne('App\Models\Manifold', 'id', 'id_manifold');
+        return $this->hasOne('App\Models\Manifold','id_manifold');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function operatividad()
+    {
+        return $this->hasOne('App\Models\Operatividad','operatividad');
     }
     
     /**
@@ -97,7 +106,7 @@ class Tuberias extends Model
      */
     public function tipoMaterial()
     {
-        return $this->hasOne('App\Models\TipoMaterial', 'id', 'id_tipo_material');
+        return $this->hasOne('App\Models\TipoMaterial','id_tipo_material');
     }
     
     /**
@@ -105,7 +114,7 @@ class Tuberias extends Model
      */
     public function tipoTuberium()
     {
-        return $this->hasOne('App\Models\TipoTuberium', 'id', 'id_tipo_tuberia');
+        return $this->hasOne('App\Models\TipoTuberium','id_tipo_tuberia');
     }
     
 

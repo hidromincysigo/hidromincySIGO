@@ -6,6 +6,7 @@ use App\Models\Estado;
 use App\Models\Municipio;
 use App\Models\Parroquia;
 use App\Models\Sectores;
+use App\Models\Sistema;
 use DB;
 use Illuminate\Http\Request;
 
@@ -31,6 +32,13 @@ class DireccionController extends Controller
         $sectores = Sectores::where('id_parroquia',$id_parroq)->orderBy('sector','asc')->get();
         // dd($parroquias);
         return json_encode($sectores);
+    }
+    public function tipoProceso()
+    {
+        $id_proceso = $_POST['id_proceso'];
+        $sistema = Sistema::where('id_proceso',$id_proceso)->orderBy('sistemas','asc')->get();
+
+        return json_encode($sistema);
     }
 
 }

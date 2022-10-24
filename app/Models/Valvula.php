@@ -17,12 +17,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $id_estacion_bombeo
  * @property $id_fabricante
  * @property $operatividad
+ * @property $en_uso
  * @property $deleted_at
  * @property $created_at
  * @property $updated_at
  *
  * @property EstacionBombeo $estacionBombeo
  * @property Fabricante $fabricante
+ * @property Operatividad $operatividad
+ * @property TipoAccionamientoValvula $tipoAccionamientoValvula
  * @property TipoValvula $tipoValvula
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -40,6 +43,7 @@ class Valvula extends Model
 		'id_estacion_bombeo' => 'required',
 		'id_fabricante' => 'required',
 		'operatividad' => 'required',
+		'en_uso' => 'required',
     ];
 
     protected $perPage = 20;
@@ -49,7 +53,7 @@ class Valvula extends Model
      *
      * @var array
      */
-    protected $fillable = ['diametro','presion_nominal','id_tipo_valvula','accionamiento','fc','id_estacion_bombeo','id_fabricante','operatividad'];
+    protected $fillable = ['diametro','presion_nominal','id_tipo_valvula','accionamiento','fc','id_estacion_bombeo','id_fabricante','operatividad','en_uso'];
 
 
     /**
@@ -57,7 +61,7 @@ class Valvula extends Model
      */
     public function estacionBombeo()
     {
-        return $this->hasOne('App\Models\EstacionBombeo', 'id', 'id_estacion_bombeo');
+        return $this->hasOne('App\Models\EstacionBombeo','id_estacion_bombeo');
     }
     
     /**
@@ -65,7 +69,23 @@ class Valvula extends Model
      */
     public function fabricante()
     {
-        return $this->hasOne('App\Models\Fabricante', 'id', 'id_fabricante');
+        return $this->hasOne('App\Models\Fabricante','id_fabricante');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function operatividad()
+    {
+        return $this->hasOne('App\Models\Operatividad','operatividad');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function tipoAccionamientoValvula()
+    {
+        return $this->hasOne('App\Models\TipoAccionamientoValvula','accionamiento');
     }
     
     /**
@@ -73,7 +93,7 @@ class Valvula extends Model
      */
     public function tipoValvula()
     {
-        return $this->hasOne('App\Models\TipoValvula', 'id', 'id_tipo_valvula');
+        return $this->hasOne('App\Models\TipoValvula','id_tipo_valvula');
     }
     
 

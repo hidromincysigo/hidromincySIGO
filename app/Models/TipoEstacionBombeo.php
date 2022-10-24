@@ -27,6 +27,7 @@ class TipoEstacionBombeo extends Model
     ];
 
     protected $perPage = 20;
+    protected $table = 'tipo_estacion_bombeo';
 
     /**
      * Attributes that should be mass-assignable.

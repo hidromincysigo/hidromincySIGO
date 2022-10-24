@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header col-12" style="background-color: #000066;">
-                        <h3 class="card-title" style="color: white;">Create Valvula</span>
+                        <h3 class="card-title" style="color: white;">Crear Valvula</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('valvulas.store') }}"  role="form" enctype="multipart/form-data">

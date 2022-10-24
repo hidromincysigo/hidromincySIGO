@@ -26,6 +26,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property EstacionBombeo $estacionBombeo
  * @property Fabricante $fabricante
+ * @property Operatividad $operatividad
  * @property TipoTensionTablero $tipoTensionTablero
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -63,7 +64,7 @@ class Tableros extends Model
      */
     public function estacionBombeo()
     {
-        return $this->hasOne('App\Models\EstacionBombeo', 'id', 'id_estacion_bombeo');
+        return $this->hasOne('App\Models\EstacionBombeo','id_estacion_bombeo');
     }
     
     /**
@@ -71,7 +72,15 @@ class Tableros extends Model
      */
     public function fabricante()
     {
-        return $this->hasOne('App\Models\Fabricante', 'id', 'id_fabricante');
+        return $this->hasOne('App\Models\Fabricante','id_fabricante');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function operatividad()
+    {
+        return $this->hasOne('App\Models\Operatividad','operatividad');
     }
     
     /**
@@ -79,7 +88,7 @@ class Tableros extends Model
      */
     public function tipoTensionTablero()
     {
-        return $this->hasOne('App\Models\TipoTensionTablero', 'id', 'id_tipo_tension');
+        return $this->hasOne('App\Models\TipoTensionTablero','id_tipo_tension');
     }
     
 

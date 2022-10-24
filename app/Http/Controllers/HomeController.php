@@ -1,6 +1,8 @@
 <?php
 
+
 namespace App\Http\Controllers;
+use DB;
 
 class HomeController extends Controller
 {
@@ -21,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // $aduccion = DB::table('infraestructura')->where('id_sistema',2)->count();
+        // dd($aduccion);
         return view('home');
     }
 }

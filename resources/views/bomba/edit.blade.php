@@ -1,11 +1,10 @@
-@extends('layouts.app')
+@extends ('adminlte::page')
 
-@section('template_title')
-    Update Bomba
-@endsection
+@section('title', 'Dashboard')
+
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="content container-fluid" style="padding-top: 10px;">
         <div class="">
             <div class="col-md-12">
 

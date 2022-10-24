@@ -27,7 +27,6 @@ class TipoTensionTablero extends Model
     ];
 
     protected $perPage = 20;
-    protected $table = 'tipo_tension_tablero';
 
     /**
      * Attributes that should be mass-assignable.
@@ -35,6 +34,7 @@ class TipoTensionTablero extends Model
      * @var array
      */
     protected $fillable = ['tipo_tension_tablero'];
+    protected $table = 'tipo_tension_tablero';
 
 
     /**

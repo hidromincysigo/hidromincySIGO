@@ -1,8 +1,7 @@
-@extends('layouts.app')
+@extends ('adminlte::page')
 
-@section('template_title')
-    Update Motore
-@endsection
+@section('title', 'Dashboard')
+
 
 @section('content')
     <section class="content container-fluid">
@@ -16,10 +15,10 @@
                         <h3 class="card-title" style="color: white;">Update Motore</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('motores.update', $motore->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('motores.update', $motores->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
-
+                            {{-- <input type="text" name="id" id="id" value="{{$motores->id}}" hidden> --}}
                             @include('motores.form')
 
                         </form>

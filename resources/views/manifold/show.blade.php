@@ -1,26 +1,49 @@
-@extends('layouts.app')
+@extends ('adminlte::page')
 
-@section('template_title')
-    {{ $manifold->name ?? 'Show Manifold' }}
-@endsection
+@section('title', 'Dashboard')
+
 
 @section('content')
-    <section class="content container-fluid">
+<section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="float-left">
-                            <h3 class="card-title" style="color: white;">Show Manifold</span>
-                        </div>
+                <div class="card-header col-12" style="background-color: #000066;">
+                    <h3 class="card-title" style="color: white;">Ver Manifold</h3>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('manifold.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('manifold.index') }}">Volver</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                        <th>Tipo Manifold</th>
+                                        <th>Cantidad Bridas</th>
+                                        <th>Cantidad Monometro</th>
+                                        <th>Cantidad Valvulas</th>
+                                        <th>Cantidad Tuberias</th>
+                                        <th>Operatividad</th>
+                                        <th>Estacion Bombeo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{$manifold->nombre_manifold}}</td>
+                                    <td>{{$manifold->tipo_manifold}}</td>
+                                    <td>{{$manifold->cant_bridas}}</td>
+                                    <td>{{$manifold->cant_monometro}}</td>
+                                    <td>{{$manifold->cant_valvulas}}</td>
+                                    <td>{{$manifold->cant_tuberias}}</td>
+                                    <td>{{$manifold->operatividad}}</td>
+                                    <td>{{$manifold->nombre_infraestructura}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        {{-- <div class="form-group">
                             <strong>Nombre:</strong>
                             {{ $manifold->nombre }}
                         </div>
@@ -52,10 +75,10 @@
                             <strong>Id Estacion Bombeo:</strong>
                             {{ $manifold->id_estacion_bombeo }}
                         </div>
-
+                        --}}
                     </div>
                 </div>
             </div>
         </div>
     </section>
-@endsection
+    @endsection

@@ -19,7 +19,7 @@
                         <form method="POST" action="{{ route('tableros.update', $tablero->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
-
+                            <input type="id" name="id" value="{{$tablero->id}}" hidden>
                             @include('tableros.form')
 
                         </form>
